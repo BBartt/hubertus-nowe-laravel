@@ -256,3 +256,13 @@ ul.top-links {
   height: 400px;
 }
 
+.decorations-section .hes-gallery img {
+  cursor: pointer;
+  width: 400px;
+}
+
+.decorations-section .ul {
+  display: table;
+  margin: 0 auto;
+}
+

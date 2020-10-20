@@ -47,7 +47,7 @@
                 <a class="link" href="sztandar">Sztandar</a>
               </li>
               <li class="li">
-                <a class="link" href="#">Odznaczenia</a>
+                <a class="link" href="/odznaczenia">Odznaczenia</a>
               </li>
               <li class="li">
                 <a class="link" href="#">Ostoja</a>

@@ -247,3 +247,12 @@ ul.top-links {
   display: flex;
 }
 
+.standard-section {
+  flex: 5;
+}
+
+.standard-section img {
+  width: 400px;
+  height: 400px;
+}
+

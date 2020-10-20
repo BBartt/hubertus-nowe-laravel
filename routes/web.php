@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HistoryController;
+use App\Http\Controllers\StandardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,4 @@ use App\Http\Controllers\HistoryController;
 // });
 Route::get('/', HomeController::class);
 Route::get('/historia', HistoryController::class);
+Route::get('/sztandar', StandardController::class);

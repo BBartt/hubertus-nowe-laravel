@@ -44,7 +44,7 @@
                 <a class="link" href="#">Członkowie</a>
               </li>
               <li class="li">
-                <a class="link" href="#">Sztandar</a>
+                <a class="link" href="sztandar">Sztandar</a>
               </li>
               <li class="li">
                 <a class="link" href="#">Odznaczenia</a>

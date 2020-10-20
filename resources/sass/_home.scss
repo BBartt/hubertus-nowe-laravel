@@ -1,140 +1,31 @@
-html,
-body {
-  min-height: 100%;
-}
-
-body {
-  background-color: #fff;
-  text-align: center;
-  min-height: 100vh;
-  padding: 0;
-  margin: 50px;
-  border: 2px solid #2ecc71;
-}
-
-.header {
+.index-section {
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  min-height: 10vh;
-  background-color: #fff;
+  justify-content: center;
   img {
-    height: 150px;
-    width: 150px;
+    width: 100%;
   }
-}
-
-ul.top-links {
-  background-color: #07a249;
-  padding: 20px;
-  margin: 0px;
-  list-style: none;
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  justify-content: space-around;
-}
-
-.main {
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-  .aside-left,
-  .aside-right {
-    position: sticky;
-    top: 10px;
-    height: 60vh;
-    margin-top: 10px;
-  }
-
-  .aside-left {
-    display: inherit;
-    flex-direction: column;
-    white-space: nowrap;
-    align-items: center;
-    justify-content: space-between;
-    flex: 1;
-    .nav {
-      .ul {
-        display: -webkit-flex;
-        display: -ms-flex;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        .li {
-          margin-top: 10px;
-          &:first-child {
-            margin-top: 0;
-          }
-        }
-      }
-    }
-    img {
-      margin: 0px auto;
-      display: block;
-      height: 100px;
-      width: 90%;
-    }
-    img + p {
-      margin: 5px 0px;
-    }
-  }
-
-  .aside-right {
-    display: -webkit-flex;
-    display: -ms-flex;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    flex: 1;
+  .oath {
+    // font-style: italic;
     text-align: center;
-    figure {
-      margin: 0;
-      img {
-        width: 150px;
-        height: 100px;
-      }
-    }
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1.5em;
+    margin: 10px;
+    width: 85%;
   }
 }
 
-.footer {
-  position: relative;
+.club-info {
   text-align: center;
-  font-size: 12px;
-  margin-top: 50px;
-}
-
-.footer-img {
-  width: 100%;
-}
-
-.footer-link {
-  position: absolute;
-  right: 0px;
-  img {
-    height: 50px;
-    width: 75px;
+  margin-top: 30px;
+  .h1 {
+    color: blue;
   }
-}
-
-.footer .link-one {
-  top: 20%;
-}
-
-.footer .link-two {
-  top: 50%;
-}
-
-.footer-text {
-  padding: 20px 10px;
-  margin: 0;
+  .paragraph {
+    font-size: 1.1em;
+  }
 }

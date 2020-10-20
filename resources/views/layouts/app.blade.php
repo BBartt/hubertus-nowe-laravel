@@ -27,10 +27,10 @@
           <nav class="nav">
             <ul class="ul">
               <li class="li">
-                <a class="link" href="#">Strona Główna</a>
+                <a class="link" href="/">Strona Główna</a>
               </li>
               <li class="li">
-                <a class="link" href="#">Historia Koła</a>
+                <a class="link" href="/historia">Historia Koła</a>
               </li>
               <!-- po kliknięciu w komunikaty otwiera się podstrona, gdzie są informacje które mogą wpisywać i usuwać upoważnione osoby np. -->
               <!-- np http://www.gdansk.pzlow.pl/palio/html.run?_Instance=pzl_www&_PageID=131&_RowID=2021&_CAT=GDANSK.AKTUALNOSCI -->

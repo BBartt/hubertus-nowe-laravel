@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HistoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,4 @@ use App\Http\Controllers\HomeController;
 //     return view('welcome');
 // });
 Route::get('/', HomeController::class);
+Route::get('/historia', HistoryController::class);

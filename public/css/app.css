@@ -266,3 +266,11 @@ ul.top-links {
   margin: 0 auto;
 }
 
+.hunting-ground-section {
+  flex: 5;
+}
+
+.hunting-ground-section img {
+  width: 90%;
+}
+

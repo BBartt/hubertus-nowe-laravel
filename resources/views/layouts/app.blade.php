@@ -53,7 +53,7 @@
                 <a class="link" href="#">Ostoja</a>
               </li>
               <li class="li">
-                <a class="link" href="#">Łowiska</a>
+                <a class="link" href="lowiska">Łowiska</a>
               </li>
               <li class="li">
                 <a class="link" href="#">Nasze psy</a>

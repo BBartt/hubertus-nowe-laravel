@@ -38,7 +38,7 @@
                 <a class="link" href="#">Komunikaty</a>
               </li>
               <li class="li">
-                <a class="link" href="#">Zarząd Koła</a>
+                <a class="link" href="/zarzad">Zarząd Koła</a>
               </li>
               <li class="li">
                 <a class="link" href="#">Członkowie</a>

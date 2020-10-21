@@ -7,6 +7,8 @@ use App\Http\Controllers\StandardController;
 use App\Http\Controllers\DecorationController;
 use App\Http\Controllers\HuntingGroundController;
 use App\Http\Controllers\AddressController;
+use App\Http\Controllers\ManagementsController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +30,5 @@ Route::get('/sztandar', StandardController::class);
 Route::get('/odznaczenia', DecorationController::class);
 Route::get('/lowiska', HuntingGroundController::class);
 Route::get('/adres', AddressController::class);
+
+Route::resource('zarzad', ManagementsController::class);

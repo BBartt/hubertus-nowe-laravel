@@ -6,6 +6,7 @@ use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\StandardController;
 use App\Http\Controllers\DecorationController;
 use App\Http\Controllers\HuntingGroundController;
+use App\Http\Controllers\AddressController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,4 @@ Route::get('/historia', HistoryController::class);
 Route::get('/sztandar', StandardController::class);
 Route::get('/odznaczenia', DecorationController::class);
 Route::get('/lowiska', HuntingGroundController::class);
+Route::get('/adres', AddressController::class);

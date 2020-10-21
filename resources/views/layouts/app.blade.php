@@ -70,7 +70,7 @@
             </ul>
           </nav>
 
-          <a class="link" href="https://www.pzlow.pl/asf">
+          <a class="link" href="kraina-wiecznych-lowow">
             <img src="{{ asset('images/aside-left/Świeto-zmarłych.jpg') }}" alt="Gdy wybije mejśmierci godzina, pochowajcie mnie w kniei zielonej niech nade mnązaszumi gęstwina hymn myśliwski radości minionej... - Julian Ejsmond \"Pieśń myśliwska\" (fragment)" />
             <p>Kraina Wiecznych Łowów</p>
           </a>

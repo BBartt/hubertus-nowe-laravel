@@ -32,3 +32,9 @@ Route::get('/lowiska', HuntingGroundController::class);
 Route::get('/adres', AddressController::class);
 
 Route::resource('zarzad', ManagementsController::class);
+
+Route::get('/clear-cache', function() {
+    $exitCode = Artisan::call('cache:clear');
+    $exitCode = Artisan::call('config:cache');
+    return 'DONE';
+});

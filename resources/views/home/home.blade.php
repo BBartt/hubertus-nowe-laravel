@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="index-section">
+<section class="home-section">
   <div>
     <img src="{{ asset('images/home/zdjecie czlonkow kola hubertus.jpg') }}" alt="zdjecie czlonkow kola" />
     <br />

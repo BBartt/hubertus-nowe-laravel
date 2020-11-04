@@ -76,7 +76,7 @@
           </a>
       </aside>
 
-      <div class="wrapper padding flex-column-5">@yield('content')</div>
+      <div class="wrapper flex-column-5">@yield('content')</div>
 
       <aside class="aside-right">
         <a target="_blank" class="link" href="https://www.pzlow.pl/">

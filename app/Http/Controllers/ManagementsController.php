@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Management;
+use Illuminate\Support\Facades\Storage;
+
 
 class ManagementsController extends Controller
 {
@@ -13,7 +16,8 @@ class ManagementsController extends Controller
      */
     public function index()
     {
-        return view('managements.index');
+        $managements = Management::all();
+        return view('managements.index', compact('managements'));
     }
 
     /**
@@ -23,7 +27,7 @@ class ManagementsController extends Controller
      */
     public function create()
     {
-        //
+      return view('managements.create');
     }
 
     /**
@@ -34,7 +38,19 @@ class ManagementsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+      $request->validate([
+        'name' => 'required',
+        'image' => 'required|file|image|mimes:jpeg,png,gif,jpg|max:2048'
+      ]);
+
+      $request->file('image')->storeAs('/public/managements-img', $request->file('image')->getClientOriginalName());
+      Management::create(['name' => $request->name, 'image' => $request->image->getClientOriginalName()]);
+      return redirect()->route('zarzad.index')->with('success', 'Członek zarządu dodany pomyślnie.');
+
+      if($request->file('image')){
+      }
+
     }
 
     /**
@@ -79,6 +95,7 @@ class ManagementsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $management = Management::find($id);
+        dd($management);
     }
 }

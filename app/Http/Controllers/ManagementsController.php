@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Management;
 
 class ManagementsController extends Controller
 {
@@ -13,6 +14,8 @@ class ManagementsController extends Controller
      */
     public function index()
     {
+        $managements = Management::all();
+        return view('managements.index', compact('managements'));
         return view('managements.index');
     }
 
@@ -23,7 +26,7 @@ class ManagementsController extends Controller
      */
     public function create()
     {
-        //
+        return view('managements.create');
     }
 
     /**
@@ -34,7 +37,19 @@ class ManagementsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+      $request->validate([
+        'name' => 'required',
+        'image' => 'required'
+      ]);
+
+      $request->file('image')->storeAs('/public/images', $request->file('image')->getClientOriginalName());
+      Management::create(['name' => $request->name, 'image' => $request->image->getClientOriginalName()]);
+      return redirect()->route('zarzad.index')->with('success', 'Członek zarządu dodany pomyślnie.');
+      
+      if($request->file('image')){
+      }
+
     }
 
     /**

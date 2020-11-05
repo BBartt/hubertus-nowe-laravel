@@ -19,8 +19,14 @@
             <img class="management-img" src="{{ asset('storage/managements-img').'/'.$management->image }}" alt="członek zarządu koła łowieckiego" />
             <div class="management-name-surname">{{ $management->name }}</div>
             <div>
-              <a href="#">Edytuj</a>
-              <a href="#">Usuń</a>
+              <!-- <a href="{{ route('zarzad.edit', $management->id) }}">Edytuj</a> -->
+              <form action="{{ route('zarzad.destroy', $management->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" style="border: none; background-color:#dc3545;color:white;">
+                    usuń
+                </button>
+              </form>
             </div>
           </li>
           <br />

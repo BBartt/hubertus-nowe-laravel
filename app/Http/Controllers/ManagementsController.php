@@ -70,9 +70,10 @@ class ManagementsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Management $zarzad)
     {
-        //
+      // dd($zarzad);
+      // $management = Management::find($id);
     }
 
     /**
@@ -93,9 +94,9 @@ class ManagementsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Management $zarzad)
     {
-        $management = Management::find($id);
-        dd($management);
+        $zarzad->delete();
+        return redirect()->route('zarzad.index')->with('success', 'Członek zarządu usunięty pomyślnie.');
     }
 }

@@ -33,8 +33,6 @@ Route::get('/adres', AddressController::class);
 
 Route::resource('zarzad', ManagementsController::class);
 
-Route::post('zarzad', [ManagementsController::class, 'store'])->name('zarzad.store');
-
 Route::get('/clear-cache', function() {
     $exitCode = Artisan::call('cache:clear');
     $exitCode = Artisan::call('config:cache');

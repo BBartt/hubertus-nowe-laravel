@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
 @section('content')
   <section class="management-section">
 
     <h2>Zarząd koła łowieckiego</h2>
 
-    <a href="{{ route('zarzad.create') }}">Dodaj członka</a>
+    <a class="link" href="{{ route('zarzad.create') }}">Dodaj członka</a>
 
     <x-alert msg="{{ Session::get('success') }}" />
 

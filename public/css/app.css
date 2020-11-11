@@ -194,20 +194,19 @@ ul.top-links {
   margin: 0;
 }
 
-.home-section {
+.index-section {
   display: -ms-flex;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0px 50px;
 }
 
-.home-section img {
+.index-section img {
   width: 100%;
 }
 
-.home-section .oath {
+.index-section .oath {
   text-align: center;
   font-weight: bold;
   font-size: 20px;

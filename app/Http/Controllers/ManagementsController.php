@@ -14,6 +14,12 @@ class ManagementsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function __construct()
+     {
+       $this->middleware('auth')->only('create', 'destroy');
+     }
+
     public function index()
     {
         $managements = Management::all();

@@ -19,7 +19,14 @@
       <ul class="top-links ul">
         <li class="li"><a href="/adres" class="link">Ważne dane i adresy</a></li>
         <li class="li"><a href="#" class="link">Foto Galeria</a></li>
-        <li class="li"><a class="link" href="#">Panel Myśliwego</a></li>
+        <li class="li"><a class="link" href="#">Panel Myśliwego</a>
+          @if(Auth::check())
+          [<form method="POST" action="{{ route('logout') }}" style="display: inline;">
+              @csrf
+              <button type="submit">Wyloguj</button>
+          </form>]
+          @endif
+        </li>
       </ul>
 
       <main class="main">

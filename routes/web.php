@@ -31,7 +31,7 @@ Route::get('/odznaczenia', DecorationController::class);
 Route::get('/lowiska', HuntingGroundController::class);
 Route::get('/adres', AddressController::class);
 
-Route::resource('zarzad', ManagementsController::class);
+Route::resource('zarzad', ManagementsController::class)->except(['show']);
 
 Route::get('/clear-cache', function() {
     $exitCode = Artisan::call('cache:clear');

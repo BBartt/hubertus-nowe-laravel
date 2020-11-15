@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Management;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 
 class ManagementsController extends Controller
@@ -17,7 +18,7 @@ class ManagementsController extends Controller
 
      public function __construct()
      {
-       $this->middleware('auth')->only('create', 'destroy');
+       $this->middleware('auth')->only('create', 'destroy', 'edit', 'update');
      }
 
     public function index()
@@ -65,10 +66,10 @@ class ManagementsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
+    // public function show($id)
+    // {
+    //     //
+    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -78,8 +79,7 @@ class ManagementsController extends Controller
      */
     public function edit(Management $zarzad)
     {
-      // dd($zarzad);
-      // $management = Management::find($id);
+      return view('managements.edit', compact('zarzad'));
     }
 
     /**
@@ -89,9 +89,30 @@ class ManagementsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Management $zarzad)
     {
-        //
+      $request->validate([
+        'name' => 'required',
+        'image' => 'required|file|image|mimes:jpeg,png,gif,jpg|max:2048'
+      ]);
+
+      $management = Management::findOrFail($zarzad->id);
+      $management->name = $request->name;
+
+      if($request->hasFile('image')){
+        $fileName = $request->file('image')->getClientOriginalName();
+
+        $management->image = $fileName;
+
+        if(File::exists(public_path().'/storage/managements-img/'.$zarzad->image)) {
+          File::delete(public_path().'/storage/managements-img/'.$zarzad->image);
+        }
+
+        $request->file('image')->storeAs('/public/managements-img', $request->file('image')->getClientOriginalName());
+      }
+
+      $management->save();
+      return redirect()->route('zarzad.index')->with('success', 'Dane członka zarządu zaktualizowane pomyślnie.');
     }
 
     /**
@@ -102,6 +123,9 @@ class ManagementsController extends Controller
      */
     public function destroy(Management $zarzad)
     {
+        if(File::exists(public_path().'/storage/managements-img/'.$zarzad->image)) {
+          File::delete(public_path().'/storage/managements-img/'.$zarzad->image);
+        }
         $zarzad->delete();
         return redirect()->route('zarzad.index')->with('success', 'Członek zarządu usunięty pomyślnie.');
     }

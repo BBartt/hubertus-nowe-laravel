@@ -5,7 +5,9 @@
 
     <h2>Zarząd koła łowieckiego</h2>
 
-    <a class="link" href="{{ route('zarzad.create') }}">Dodaj członka</a>
+    @if(Auth::check() && Auth::user()->name == 'admin')
+      <a class="link" href="{{ route('zarzad.create') }}">Dodaj członka</a>
+    @endif
 
     <x-alert msg="{{ Session::get('success') }}" />
 
@@ -18,8 +20,8 @@
             <img class="management-img" src="{{ asset('storage/managements-img').'/'.$management->image }}" alt="członek zarządu koła łowieckiego" />
             <div class="management-name-surname">{{ $management->name }}</div>
             <div>
-              <a href="{{ route('zarzad.edit', $management->id) }}">Edytuj</a>
               @if(Auth::check() && Auth::user()->name == 'admin')
+                <a href="{{ route('zarzad.edit', $management->id) }}">Edytuj</a>
                 <form action="{{ route('zarzad.destroy', $management->id) }}" method="POST">
                   @csrf
                   @method('DELETE')

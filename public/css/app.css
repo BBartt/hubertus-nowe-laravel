@@ -53,6 +53,12 @@ a.link:hover {
   font-weight: bold;
 }
 
+.delete-btn {
+  background-color: #dc3545;
+  border: none;
+  color: white;
+}
+
 html,
 body {
   min-height: 100%;
@@ -285,5 +291,13 @@ ul.top-links {
 
 .management-section .management-img {
   width: 200px;
+}
+
+.member-section .table {
+  margin: 0 auto;
+}
+
+.member-section .table tr:nth-child(even) {
+  background-color: #16c360;
 }
 

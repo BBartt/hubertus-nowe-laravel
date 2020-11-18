@@ -25,7 +25,7 @@
                 <form action="{{ route('zarzad.destroy', $management->id) }}" method="POST">
                   @csrf
                   @method('DELETE')
-                  <button type="submit" style="border: none; background-color:#dc3545;color:white;">usuń</button>
+                  <button type="submit" class="delete-btn">usuń</button>
                 </form>
               @endif
             </div>

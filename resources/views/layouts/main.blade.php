@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Koło Łowieckie Nr. 87 „Hubertus” w Nowem</title>
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
   <script src="{{ asset('css/app.js') }}" charset="utf-8"></script>
 </head>
 <body>
@@ -52,7 +52,7 @@
                 <a class="link" href="/zarzad">Zarząd Koła</a>
               </li>
               <li class="li">
-                <a class="link" href="#">Członkowie</a>
+                <a class="link" href="/czlonkowie_kola">Członkowie</a>
               </li>
               <li class="li">
                 <a class="link" href="sztandar">Sztandar</a>

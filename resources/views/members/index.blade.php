@@ -2,13 +2,22 @@
 
 @section('content')
 <section class="member-section">
-  <h2>
-    Lista członków i rezydentów Koła Łowieckiego nr 87 Hubertus w Nowem na
-    dzień 1-02-2020
-  </h2>
+
+  @if($titles->title1)
+    <h2>{{ $titles->title1 }}</h2>
+  @endif
+
 
   @if(Auth::check() && Auth::user()->name == 'admin')
     <a class="link" href="{{ route('czlonkowie_kola.create') }}">Dodaj członka</a>
+    <br>
+
+    @if($titles)
+      <a class="link" href="{{ route('membersTitles.edit', 1) }}">Edytuj tytuły</a>
+    @else
+      <a class="link" href="{{ route('membersTitles.create') }}">Dodaj tytuły</a>
+    @endif
+
   @endif
 
   <x-alert msg="{{ Session::get('success') }}" />
@@ -43,6 +52,10 @@
       @endif
     </tbody>
   </table>
+
+  @if($titles->title1)
+    <h2>{{ $titles->title2 }}</h2>
+  @endif
 
 </section>
 @endsection

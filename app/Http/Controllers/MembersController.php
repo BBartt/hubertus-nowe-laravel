@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Member;
+use App\Models\MemberTitle;
 use Illuminate\Http\Request;
 
 class MembersController extends Controller
 {
-    public function __construct()
-    {
+    public function __construct(){
       $this->middleware('auth')->only('create', 'destroy', 'edit', 'update');
     }
 
@@ -20,7 +20,8 @@ class MembersController extends Controller
     public function index()
     {
       $members = Member::all();
-      return view('members.index', compact('members'));
+      $titles = MemberTitle::find(1);
+      return view('members.index', compact('members', 'titles'));
     }
 
     /**
@@ -67,7 +68,7 @@ class MembersController extends Controller
     public function edit(Member $czlonkowie_kola, Request $request)
     {
 
-      // dd($czlonkowie_kola->id);
+      // dd($czlonkowie_kola);
       // dd($request);
       return view('members.edit', compact('czlonkowie_kola'));
     }

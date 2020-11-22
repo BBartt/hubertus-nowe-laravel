@@ -9,6 +9,7 @@ use App\Http\Controllers\HuntingGroundController;
 use App\Http\Controllers\AddressController;
 use App\Http\Controllers\ManagementsController;
 use App\Http\Controllers\MembersController;
+use App\Http\Controllers\MemberTitleController;
 
 
 /*
@@ -34,6 +35,7 @@ Route::get('/adres', AddressController::class);
 
 Route::resource('zarzad', ManagementsController::class)->except(['show']);
 Route::resource('czlonkowie_kola', MembersController::class)->except(['show']);
+Route::resource('membersTitles', MemberTitleController::class)->only(['create', 'store', 'edit', 'update']);
 
 Route::get('/clear-cache', function() {
     $exitCode = Artisan::call('cache:clear');

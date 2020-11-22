@@ -17,7 +17,7 @@
       <br /> <br />
 
       <input type="submit" value="Dodaj" />
-      <a href="{{ route('membersTitles.index') }}" class="btn btn-link">Powrót</a>
+      <a href="{{ route('czlonkowie_kola.index') }}" class="btn btn-link">Powrót</a>
     </form>
 
   <section>

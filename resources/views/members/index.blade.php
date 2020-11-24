@@ -3,13 +3,15 @@
 @section('content')
 <section class="member-section">
 
-  @if($titles->title1)
+  @if(isset($titles->title1))
     <h2>{{ $titles->title1 }}</h2>
   @endif
 
 
   @if(Auth::check() && Auth::user()->name == 'admin')
     <a class="link" href="{{ route('czlonkowie_kola.create') }}">Dodaj członka</a>
+    <br>
+    <a class="link" href="{{ route('rezydenci.create') }}">Dodaj rezydenta</a>
     <br>
 
     @if($titles)
@@ -53,9 +55,38 @@
     </tbody>
   </table>
 
-  @if($titles->title1)
+  @if(isset($titles->title1))
     <h2>{{ $titles->title2 }}</h2>
   @endif
+
+  <table class="table">
+    <thead>
+      <tr>
+        <td></td>
+        <td>Imię i nazwisko:</td>
+      </tr>
+    </thead>
+    <tbody>
+      @if( $residents->count() > 0 )
+        @foreach($residents as $resident)
+          <tr>
+            <td>{{$loop->index+1}}</td>
+            <td>{{$resident->name}}</td>
+            @if(Auth::check() && Auth::user()->name == 'admin')
+              <td>
+                <a href="{{ route('rezydenci.edit', $resident->id)}}">Edytuj</a>
+                <form action="{{ route('rezydenci.destroy', $resident->id) }}" method="post">
+                  @csrf
+                  @method('DELETE')
+                  <button class="btn delete-btn" type="submit">Usuń</button>
+                </form>
+              </td>
+            @endif
+          </tr>
+        @endforeach
+      @endif
+    </tbody>
+  </table>
 
 </section>
 @endsection

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Member;
+use App\Models\Residents;
 use App\Models\MemberTitle;
 use Illuminate\Http\Request;
 
@@ -21,7 +22,8 @@ class MembersController extends Controller
     {
       $members = Member::all();
       $titles = MemberTitle::find(1);
-      return view('members.index', compact('members', 'titles'));
+      $residents = Residents::all();
+      return view('members.index', compact('members', 'titles', 'residents'));
     }
 
     /**

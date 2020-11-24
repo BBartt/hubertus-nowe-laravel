@@ -10,6 +10,7 @@ use App\Http\Controllers\AddressController;
 use App\Http\Controllers\ManagementsController;
 use App\Http\Controllers\MembersController;
 use App\Http\Controllers\MemberTitleController;
+use App\Http\Controllers\ResidentsController;
 
 
 /*
@@ -36,6 +37,8 @@ Route::get('/adres', AddressController::class);
 Route::resource('zarzad', ManagementsController::class)->except(['show']);
 Route::resource('czlonkowie_kola', MembersController::class)->except(['show']);
 Route::resource('membersTitles', MemberTitleController::class)->only(['create', 'store', 'edit', 'update']);
+Route::resource('rezydenci', ResidentsController::class)->except(['index', 'show']);
+
 
 Route::get('/clear-cache', function() {
     $exitCode = Artisan::call('cache:clear');

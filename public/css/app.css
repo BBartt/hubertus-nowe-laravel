@@ -151,6 +151,10 @@ ul.top-links {
   margin: 5px 0px;
 }
 
+.main .wrapper {
+  padding: 0px 20px;
+}
+
 .main .aside-right {
   display: -ms-flex;
   display: flex;
@@ -204,7 +208,7 @@ ul.top-links {
   margin: 0;
 }
 
-.index-section {
+.home-section {
   display: -ms-flex;
   display: flex;
   flex-direction: column;
@@ -212,11 +216,11 @@ ul.top-links {
   justify-content: center;
 }
 
-.index-section img {
+.home-section img {
   width: 100%;
 }
 
-.index-section .oath {
+.home-section .oath {
   text-align: center;
   font-weight: bold;
   font-size: 20px;
@@ -257,13 +261,10 @@ ul.top-links {
   display: flex;
 }
 
-.standard-section {
-  flex: 5;
-}
-
 .standard-section img {
-  width: 400px;
+  cursor: pointer;
   height: 400px;
+  width: 400px;
 }
 
 .decorations-section .hes-gallery img {
@@ -276,11 +277,8 @@ ul.top-links {
   margin: 0 auto;
 }
 
-.hunting-ground-section {
-  flex: 5;
-}
-
 .hunting-ground-section img {
+  cursor: pointer;
   width: 90%;
 }
 

@@ -53,6 +53,7 @@
                 <a class="link" href="/zarzad">Zarząd Koła</a>
               </li>
               <li class="li">
+                <!-- hasło -->
                 <a class="link" href="/czlonkowie_kola">Członkowie</a>
               </li>
               <li class="li">
@@ -62,12 +63,17 @@
                 <a class="link" href="/odznaczenia">Odznaczenia</a>
               </li>
               <li class="li">
+
+                <!-- baza -->
+                <!-- długi tkst i zdjęćia i pod każdyn zdjęciem ma być opis -->
+
                 <a class="link" href="#">Ostoja</a>
               </li>
               <li class="li">
                 <a class="link" href="lowiska">Łowiska</a>
               </li>
               <li class="li">
+                <!-- zdjęcie i opis pod zdjęćiem -->
                 <a class="link" href="#">Nasze psy</a>
               </li>
               <li class="li">
@@ -126,7 +132,7 @@
       <a class="footer-link link-one" href="mailto:kl87@pzlbydgoszcz.pl">
         <img src="{{ asset('images/home/indeks 1.png') }}" alt="mail koła łowieckiego" />
       </a>
-      <a href="https://www.facebook.com/groups/1419302578097029" class="footer-link link-two" target="_blank">
+      <a href="https://www.facebook.com/Ko%C5%82o-%C5%81owieckie-nr-87-Hubertus-w-Nowem-478568449621517" class="footer-link link-two" target="_blank">
         <img src="{{ asset('images/home/indeks.png') }}" alt="link do konta facebook koła" />
       </a>
 

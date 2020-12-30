@@ -352,17 +352,18 @@ ul.top-links {
   margin: 0;
 }
 
-.gallery-section.show .images-wrapper {
+.gallery-section.show .images-wrapper .hes-gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
-.gallery-section.show .images-wrapper .image-wrapper .gallery-image {
+.gallery-section.show .images-wrapper .hes-gallery .image-wrapper .gallery-image {
+  cursor: pointer;
   width: 200px;
 }
 
-.gallery-section.show .images-wrapper .image-wrapper p {
+.gallery-section.show .images-wrapper .hes-gallery .image-wrapper p {
   margin: 0;
 }
 

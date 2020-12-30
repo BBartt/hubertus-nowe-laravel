@@ -2,7 +2,10 @@
 
 @section('content')
 <section class="gallery-section index">
-  <a href="/galerie/create">Dodaj galerię</a>
+  @if(Auth::check() && Auth::user()->name == 'admin')
+    <a href="/galerie/create">Dodaj galerię</a>
+  @endif
+  <br />
   <x-alert msg="{{ Session::get('success') }}" />
   @if( count($galleries) > 0 )
     <div class="galleries-wrapper">

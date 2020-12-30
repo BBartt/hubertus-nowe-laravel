@@ -2,7 +2,9 @@
 
 @section('content')
 <section class="gallery-section show">
-  <a href="/zdjecia/create/{{ $gallery->id }}">Dodaj zdjęcia</a>
+  @if(Auth::check() && Auth::user()->name == 'admin')
+    <a href="/zdjecia/create/{{ $gallery->id }}">Dodaj zdjęcia</a>
+  @endif
   <br />
   <a href="{{ route('galerie.index') }}" class="btn btn-link">Powrót</a>
   <x-alert msg="{{ Session::get('success') }}" />

@@ -24,7 +24,7 @@
     <br />
     <br />
 
-    <input type="submit" value="Dodaj" />
+    <input type="submit" value="Edytuj" />
     <a href="{{ route('galerie.index') }}" class="btn btn-link">Powrót</a>
   </form>
 

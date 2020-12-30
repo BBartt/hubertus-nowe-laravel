@@ -13,6 +13,7 @@ use App\Http\Controllers\MemberTitleController;
 use App\Http\Controllers\ResidentsController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\VenisonController;
 
 
 /*
@@ -41,6 +42,7 @@ Route::resource('czlonkowie_kola', MembersController::class)->except(['show']);
 Route::resource('membersTitles', MemberTitleController::class)->only(['create', 'store', 'edit', 'update']);
 Route::resource('rezydenci', ResidentsController::class)->except(['index', 'show']);
 Route::resource('galerie', GalleryController::class);
+Route::resource('dziczyzna', VenisonController::class);
 
 
 Route::get('/zdjecia/create/{id}', [ImageController::class, 'create'])->name('zdjecia.create');

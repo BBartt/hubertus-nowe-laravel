@@ -6,6 +6,10 @@
   padding: 0px 50px;
 }
 
+.padding-50-0 {
+  padding: 50px 0px;
+}
+
 a.link {
   color: black;
   text-decoration: none;
@@ -68,6 +72,26 @@ a.link:hover {
 
 .alert-danger {
   color: red;
+}
+
+.border-white {
+  border: 5px solid white;
+}
+
+.border-bottom {
+  border-bottom: 5px solid white;
+}
+
+.color-white {
+  color: white;
+}
+
+.color-purple {
+  color: #2a0961;
+}
+
+.color-blue {
+  color: #0052ab;
 }
 
 html,
@@ -340,5 +364,81 @@ ul.top-links {
 
 .gallery-section.show .images-wrapper .image-wrapper p {
   margin: 0;
+}
+
+.venison-section {
+  width: 100%;
+}
+
+.venison-section .wrapper h1:nth-child(1) {
+  margin-right: auto;
+}
+
+.venison-section .wrapper h1:nth-child(3) {
+  align-self: flex-end;
+}
+
+.venison-section p {
+  font-size: 20px;
+}
+
+.venison-section .venisons-wrapper {
+  justify-content: space-evenly;
+}
+
+.venison-section .venisons-wrapper > div {
+  max-width: 260px;
+  min-width: 30%;
+  height: 100%;
+  background-color: white;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  overflow: hidden;
+}
+
+.venison-section .venisons-wrapper > div:hover a.venison .content > div {
+  transform: translateY(-15px);
+}
+
+.venison-section .venisons-wrapper > div a.venison {
+  text-decoration: none;
+  display: block;
+  height: 310px;
+}
+
+.venison-section .venisons-wrapper > div a.venison .content {
+  overflow: auto;
+  height: 100%;
+}
+
+.venison-section .venisons-wrapper > div a.venison .content .venison-img {
+  display: block;
+  height: 200px;
+  width: 100%;
+}
+
+.venison-section .venisons-wrapper > div a.venison .content > div {
+  position: relative;
+  z-index: 10;
+  margin-top: -15px;
+  border-top: 3px solid #2ecc71;
+  border-top-right-radius: 14px;
+  border-top-left-radius: 14px;
+  padding: 10px 10px 0px 20px;
+  background-color: white;
+  transition: transform 0.2s ease-in-out;
+}
+
+.venison-section .venisons-wrapper > div a.venison .content h1 {
+  margin: 0 auto;
+}
+
+.venison-section .venisons-wrapper .info {
+  font-size: 18px;
+  color: black;
+}
+
+.venison-section .contact {
+  border: 2px solid white;
 }
 

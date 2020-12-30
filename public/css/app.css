@@ -15,17 +15,23 @@ a.link:hover {
   text-decoration: underline;
 }
 
-.flex-column-5 {
+.flex-row-center {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 5;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .flex-column {
   display: -ms-flex;
   display: flex;
   flex-direction: column;
+}
+
+.flex-column-5 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 5;
 }
 
 .flex-column-center {
@@ -55,8 +61,13 @@ a.link:hover {
 
 .delete-btn {
   background-color: #dc3545;
+  cursor: pointer;
   border: none;
   color: white;
+}
+
+.alert-danger {
+  color: red;
 }
 
 html,
@@ -297,5 +308,37 @@ ul.top-links {
 
 .member-section .table tr:nth-child(even) {
   background-color: #16c360;
+}
+
+.gallery-section {
+  width: 100%;
+}
+
+.gallery-section.index .galleries-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.gallery-section.index .galleries-wrapper a .gallery-thumbnail {
+  width: 200px;
+}
+
+.gallery-section.index .galleries-wrapper a h1 {
+  margin: 0;
+}
+
+.gallery-section.show .images-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.gallery-section.show .images-wrapper .image-wrapper .gallery-image {
+  width: 200px;
+}
+
+.gallery-section.show .images-wrapper .image-wrapper p {
+  margin: 0;
 }
 

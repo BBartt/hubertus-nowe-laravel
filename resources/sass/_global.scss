@@ -14,11 +14,10 @@ a.link:hover {
     text-decoration: underline;
 }
 
-.flex-column-5 {
+.flex-row-center {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 5;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .flex-column {
@@ -26,6 +25,13 @@ a.link:hover {
     display: -ms-flex;
     display: flex;
     flex-direction: column;
+}
+
+.flex-column-5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 5;
 }
 
 .flex-column-center {
@@ -56,8 +62,13 @@ a.link:hover {
     // color: red;
 }
 
-.delete-btn{
-  background-color: #dc3545;
-  border: none;
-  color: white;
+.delete-btn {
+    background-color: #dc3545;
+    cursor: pointer;
+    border: none;
+    color: white;
+}
+
+.alert-danger {
+    color: red;
 }

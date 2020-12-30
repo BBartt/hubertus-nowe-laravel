@@ -1,0 +1,35 @@
+.gallery-section {
+    width: 100%;
+
+    &.index {
+        .galleries-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            a {
+                .gallery-thumbnail {
+                    width: 200px;
+                }
+                h1 {
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    &.show {
+        .images-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            .image-wrapper {
+                .gallery-image {
+                    width: 200px;
+                }
+                p {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

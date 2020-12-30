@@ -11,6 +11,8 @@ use App\Http\Controllers\ManagementsController;
 use App\Http\Controllers\MembersController;
 use App\Http\Controllers\MemberTitleController;
 use App\Http\Controllers\ResidentsController;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\ImageController;
 
 
 /*
@@ -38,6 +40,15 @@ Route::resource('zarzad', ManagementsController::class)->except(['show']);
 Route::resource('czlonkowie_kola', MembersController::class)->except(['show']);
 Route::resource('membersTitles', MemberTitleController::class)->only(['create', 'store', 'edit', 'update']);
 Route::resource('rezydenci', ResidentsController::class)->except(['index', 'show']);
+Route::resource('galerie', GalleryController::class);
+
+
+Route::get('/zdjecia/create/{id}', [ImageController::class, 'create'])->name('zdjecia.create');
+Route::post('/zdjecia/store', [ImageController::class, 'store'])->name('zdjecia.store');
+Route::get('/zdjecia/{id}/edit', [ImageController::class, 'edit'])->name('zdjecia.edit');
+Route::put('/zdjecia/{id}', [ImageController::class, 'update'])->name('zdjecia.update');
+Route::delete('/zdjecia/{id}', [ImageController::class, 'destroy'])->name('zdjecia.destroy');
+
 
 
 Route::get('/clear-cache', function() {

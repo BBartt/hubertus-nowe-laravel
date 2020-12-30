@@ -109,6 +109,6 @@ class MemberTitleController extends Controller
     public function destroy(MemberTitle $memberTitle)
     {
         $memberTitle->delete();
-        return redirect()->route('czlonkowie_kola.index')->with('success', 'Tytuły sekcji zaktualizowane pomyślnie.');
+        return redirect()->route('czlonkowie_kola.index')->with('success', 'Tytuły sekcji usunięty pomyślnie.');
     }
 }

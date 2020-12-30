@@ -18,7 +18,7 @@
 
       <ul class="top-links ul">
         <li class="li"><a href="/adres" class="link">Ważne dane i adresy</a></li>
-        <li class="li"><a href="#" class="link">Foto Galeria</a></li>
+        <li class="li"><a href="/galerie" class="link">Foto Galeria</a></li>
 
         @if(Auth::check())
           <li class="li">

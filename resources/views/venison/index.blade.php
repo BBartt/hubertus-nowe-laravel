@@ -39,7 +39,7 @@
               <div>
                 <h1>{{ $venison->name }}</h1>
                 <div class="info">
-                  <div>zamówienia</div>
+                  <div>Zamówienia:</div>
                   <div>{{ $venison->interval }}</div>
                   <div class="price">{{ $venison->price }}</div>
                 </div>

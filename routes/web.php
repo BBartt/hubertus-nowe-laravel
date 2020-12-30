@@ -45,11 +45,11 @@ Route::resource('galerie', GalleryController::class);
 Route::resource('dziczyzna', VenisonController::class);
 
 
-Route::get('/zdjecia/create/{id}', [ImageController::class, 'create'])->name('zdjecia.create');
-Route::post('/zdjecia/store', [ImageController::class, 'store'])->name('zdjecia.store');
-Route::get('/zdjecia/{id}/edit', [ImageController::class, 'edit'])->name('zdjecia.edit');
-Route::put('/zdjecia/{id}', [ImageController::class, 'update'])->name('zdjecia.update');
-Route::delete('/zdjecia/{id}', [ImageController::class, 'destroy'])->name('zdjecia.destroy');
+Route::get('/zdjecia/create/{id}', [ImageController::class, 'create'])->name('zdjecia.create')->middleware('auth');
+Route::post('/zdjecia/store', [ImageController::class, 'store'])->name('zdjecia.store')->middleware('auth');
+Route::get('/zdjecia/{id}/edit', [ImageController::class, 'edit'])->name('zdjecia.edit')->middleware('auth');
+Route::put('/zdjecia/{id}', [ImageController::class, 'update'])->name('zdjecia.update')->middleware('auth');
+Route::delete('/zdjecia/{id}', [ImageController::class, 'destroy'])->name('zdjecia.destroy')->middleware('auth');
 
 
 

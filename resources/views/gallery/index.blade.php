@@ -2,6 +2,9 @@
 
 @section('content')
 <section class="gallery-section index">
+
+  <h1>Galeria zdjęć</h1>
+
   @if(Auth::check() && Auth::user()->name == 'admin')
     <a href="/galerie/create">Dodaj galerię</a>
   @endif

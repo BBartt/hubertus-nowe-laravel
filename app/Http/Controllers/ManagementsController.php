@@ -48,7 +48,7 @@ class ManagementsController extends Controller
 
       $request->validate([
         'name' => 'required',
-        'image' => 'required|file|image|mimes:jpeg,png,gif,jpg|max:2048'
+        'image' => 'required|file|image|mimes:jpeg,png,gif,jpg'
       ]);
 
       $request->file('image')->storeAs('/public/managements-img', $request->file('image')->getClientOriginalName());
@@ -93,7 +93,7 @@ class ManagementsController extends Controller
     {
       $request->validate([
         'name' => 'required',
-        'image' => 'required|file|image|mimes:jpeg,png,gif,jpg|max:2048'
+        'image' => 'file|image|mimes:jpeg,png,gif,jpg'
       ]);
 
       $management = Management::findOrFail($zarzad->id);

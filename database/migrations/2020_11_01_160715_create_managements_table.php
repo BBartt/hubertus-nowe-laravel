@@ -16,7 +16,7 @@ class CreateManagementsTable extends Migration
         Schema::create('managements', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('image')->nullable();
+            $table->text('image')->nullable();
             $table->timestamps();
         });
     }

@@ -1,0 +1,11 @@
+.dogs-section {
+    .dogs-list {
+        &-item {
+        }
+        .dog-img {
+            border-radius: 5px;
+            height: 180px;
+            width: 280px;
+        }
+    }
+}

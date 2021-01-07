@@ -74,7 +74,7 @@
               </li>
               <li class="li">
                 <!-- zdjęcie i opis pod zdjęćiem -->
-                <a class="link" href="#">Nasze psy</a>
+                <a class="link" href="/psy">Nasze psy</a>
               </li>
               <li class="li">
                 <a class="link" href="#">Myśliwi dla Was</a>

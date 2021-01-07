@@ -15,6 +15,7 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\VenisonController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\OurDogsController;
 
 
 /*
@@ -45,6 +46,7 @@ Route::resource('rezydenci', ResidentsController::class)->except(['index', 'show
 Route::resource('galerie', GalleryController::class);
 Route::resource('dziczyzna', VenisonController::class);
 Route::resource('komunikaty', MessageController::class);
+Route::resource('psy', OurDogsController::class)->except(['show']);
 
 
 Route::get('/zdjecia/create/{id}', [ImageController::class, 'create'])->name('zdjecia.create')->middleware('auth');

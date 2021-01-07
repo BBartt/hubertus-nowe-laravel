@@ -25,6 +25,13 @@ a.link:hover {
   justify-content: center;
 }
 
+.flex-row-center-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 .flex-column {
   display: -ms-flex;
   display: flex;
@@ -441,5 +448,38 @@ ul.top-links {
 
 .venison-section .contact {
   border: 2px solid white;
+}
+
+.messages-section {
+  width: 100%;
+}
+
+.messages-section.index .messages-wrapper .message {
+  align-items: baseline;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+
+.messages-section.index .messages-wrapper .message a h1 {
+  margin: 0;
+}
+
+.messages-section.index .messages-wrapper .message > span {
+  margin-left: 20px;
+}
+
+.messages-section.index .messages-wrapper .message .actions {
+  margin-left: 20px;
+}
+
+.messages-section.show .title {
+  border-bottom: 2px solid white;
+  margin: 10px 0px 20px;
+  padding-bottom: 5px;
+}
+
+.messages-section.show .message-img {
+  width: 300px;
+  float: left;
 }
 

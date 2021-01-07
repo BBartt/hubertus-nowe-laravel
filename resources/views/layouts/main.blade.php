@@ -47,7 +47,7 @@
               <!-- po kliknięciu w komunikaty otwiera się podstrona, gdzie są informacje które mogą wpisywać i usuwać upoważnione osoby np. -->
               <!-- np http://www.gdansk.pzlow.pl/palio/html.run?_Instance=pzl_www&_PageID=131&_RowID=2021&_CAT=GDANSK.AKTUALNOSCI -->
               <li class="li">
-                <a class="link" href="#">Komunikaty</a>
+                <a class="link" href="/komunikaty">Komunikaty</a>
               </li>
               <li class="li">
                 <a class="link" href="/zarzad">Zarząd Koła</a>

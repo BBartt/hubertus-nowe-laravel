@@ -44,8 +44,12 @@ class VenisonController extends Controller
         'interval' => 'required'
       ]);
 
-      $request->file('image')->storeAs('/public/venison', $request->file('image')->getClientOriginalName());
-      Venison::create(['name' => $request->name, 'image' => $request->image->getClientOriginalName(), 'price' => $request->price, 'interval' => $request->interval]);
+      $request->file('image')->storeAs('/public/venison', rand()."___".$request->file('image')->getClientOriginalName());
+      Venison::create([
+        'name' => $request->name,
+        'image' => $request->image->getClientOriginalName(),
+        'price' => $request->price, 'interval' => $request->interval
+      ]);
       return redirect()->route('dziczyzna.index')->with('success', 'Nowy produkt dodany pomyślnie.');
     }
 
@@ -82,10 +86,6 @@ class VenisonController extends Controller
      */
     public function update(Request $request, Venison $dziczyzna)
     {
-      // dd($request->file('image')->getClientOriginalName());
-      // dd($dziczyzna->image);
-
-      // 'image' => 'nullable|file|mimes:jpeg,png,gif,jpg',
       $request->validate([
         'name' => 'required',
         'price' => 'required',
@@ -98,12 +98,14 @@ class VenisonController extends Controller
 
 
       if($request->hasFile('image')){
-        $fileName = $request->file('image')->getClientOriginalName();
-        $dziczyzna->image = $fileName;
+        $image = $dziczyzna->image;
 
-        if(File::exists(public_path().'/storage/venison/'.$fileName)) {
-          File::delete(public_path().'/storage/venison/'.$fileName);
+        if(File::exists(public_path().'/storage/venison/'.$image)) {
+          File::delete(public_path().'/storage/venison/'.$image);
         }
+
+        $fileName = rand()."___".$request->file('image')->getClientOriginalName();
+        $dziczyzna->image = $fileName;
 
         $request->file('image')->storeAs('/public/venison', $fileName);
       } else {

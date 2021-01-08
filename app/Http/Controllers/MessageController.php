@@ -105,14 +105,14 @@ class MessageController extends Controller
       $komunikaty->linkName = $request->linkName;
 
       if($request->hasFile('image')){
-        $fileName = rand()."___".$request->file('image')->getClientOriginalName();
-        $komunikaty->image = $fileName;
-
         $image = $komunikaty->image;
 
         if(File::exists(public_path().'/storage/messages/'.$image)) {
           File::delete(public_path().'/storage/messages/'.$image);
         }
+
+        $fileName = rand()."___".$request->file('image')->getClientOriginalName();
+        $komunikaty->image = $fileName;
 
         $request->file('image')->storeAs('/public/messages', $fileName);
       }else {

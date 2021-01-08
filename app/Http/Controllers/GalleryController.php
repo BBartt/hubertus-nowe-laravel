@@ -49,8 +49,10 @@ class GalleryController extends Controller
           'thumbnail' => 'required|file|mimes:jpeg,png,gif,jpg'
         ]);
 
-        $request->file('thumbnail')->storeAs('/public/galleries/thumbnails', $request->file('thumbnail')->getClientOriginalName());
-        Gallery::create(['name' => $request->name, 'thumbnail' => $request->thumbnail->getClientOriginalName()]);
+        $fileName = rand()."___".$request->file('thumbnail')->getClientOriginalName();
+
+        $request->file('thumbnail')->storeAs('/public/galleries/thumbnails', $fileName);
+        Gallery::create(['name' => $request->name, 'thumbnail' => $fileName]);
         return redirect()->route('galerie.index')->with('success', 'Miniaturka i nazwa galerii dodana pomyślnie.');
     }
 
@@ -95,14 +97,14 @@ class GalleryController extends Controller
       $galerie->name = $request->name;
 
       if($request->hasFile('thumbnail')){
-        $fileName = $request->file('thumbnail')->getClientOriginalName();
         $galleryThumbnail = $galerie->thumbnail;
-
-        $galerie->thumbnail = $fileName;
 
         if(File::exists(public_path().'/storage/galleries/thumbnails/'.$galleryThumbnail)) {
           File::delete(public_path().'/storage/galleries/thumbnails/'.$galleryThumbnail);
         }
+
+        $fileName = rand()."___".$request->file('thumbnail')->getClientOriginalName();
+        $galerie->thumbnail = $fileName;
 
         $request->file('thumbnail')->storeAs('/public/galleries/thumbnails', $fileName);
       }else {

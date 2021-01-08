@@ -12,7 +12,7 @@
 
       <div>
         <label for="title">Tytuł komunikatu:</label> <br>
-        <input type="text" name="title" />
+        <input type="text" name="title" autofocus />
       </div>
       <div>
         <label for="description">Opis:</label> <br>

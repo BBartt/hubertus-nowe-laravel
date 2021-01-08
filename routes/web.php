@@ -37,7 +37,7 @@ Route::get('/historia', HistoryController::class);
 Route::get('/sztandar', StandardController::class);
 Route::get('/odznaczenia', DecorationController::class);
 Route::get('/lowiska', HuntingGroundController::class);
-Route::get('/adres', AddressController::class);
+Route::resource('/adres', AddressController::class);
 
 Route::resource('zarzad', ManagementsController::class)->except(['show']);
 Route::resource('czlonkowie_kola', MembersController::class)->except(['show']);

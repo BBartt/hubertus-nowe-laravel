@@ -46,7 +46,6 @@ a.link:hover {
 }
 
 .flex-column-center {
-  display: -ms-flex;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,7 +53,6 @@ a.link:hover {
 }
 
 .flex-center-center {
-  display: -ms-flex;
   display: flex;
   justify-content: center;
   align-items: center;

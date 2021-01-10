@@ -18,7 +18,7 @@ class ManagementsController extends Controller
 
      public function __construct()
      {
-       $this->middleware('auth')->only('create', 'destroy', 'edit', 'update');
+       $this->middleware('auth')->except('index');
      }
 
     public function index()
@@ -32,8 +32,7 @@ class ManagementsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create(){
       return view('managements.create');
     }
 
@@ -61,24 +60,12 @@ class ManagementsController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    // public function show($id)
-    // {
-    //     //
-    // }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Management $zarzad)
-    {
+    public function edit(Management $zarzad){
       return view('managements.edit', compact('zarzad'));
     }
 

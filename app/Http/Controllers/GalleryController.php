@@ -10,10 +10,12 @@ use App\Models\Image;
 // use Illuminate\Http\File;
 use File;
 
-
-
 class GalleryController extends Controller
 {
+    public function __construct(){
+      $this->middleware('auth')->except(['index', 'show']);
+    }
+
     /**
      * Display a listing of the resource.
      *

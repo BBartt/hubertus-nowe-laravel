@@ -44,12 +44,17 @@ class VenisonController extends Controller
         'interval' => 'required'
       ]);
 
-      $request->file('image')->storeAs('/public/venison', rand()."___".$request->file('image')->getClientOriginalName());
+      $fileName = rand()."___".$request->file('image')->getClientOriginalName();
+
+      $request->file('image')->storeAs('/public/venison', $fileName);
+
       Venison::create([
         'name' => $request->name,
-        'image' => $request->image->getClientOriginalName(),
-        'price' => $request->price, 'interval' => $request->interval
+        'image' => $fileName,
+        'price' => $request->price,
+        'interval' => $request->interval
       ]);
+      
       return redirect()->route('dziczyzna.index')->with('success', 'Nowy produkt dodany pomyślnie.');
     }
 

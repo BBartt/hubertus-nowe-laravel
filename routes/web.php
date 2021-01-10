@@ -57,9 +57,15 @@ Route::delete('/zdjecia/{id}', [ImageController::class, 'destroy'])->name('zdjec
 
 
 
+Route::get('/storage-link', function() {
+  $exitCode = Artisan::call('storage:link');
+  return 'DONE';
+});
+
 Route::get('/clear-cache', function() {
     $exitCode = Artisan::call('cache:clear');
     $exitCode = Artisan::call('config:cache');
+    $exitCode = Artisan::call('config:clear');
     return 'DONE';
 });
 

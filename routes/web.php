@@ -63,10 +63,11 @@ Route::get('/storage-link', function() {
 });
 
 Route::get('/clear-cache', function() {
-    $exitCode = Artisan::call('cache:clear');
-    $exitCode = Artisan::call('config:cache');
-    $exitCode = Artisan::call('config:clear');
-    return 'DONE';
+    Artisan::call('cache:clear');
+    Artisan::call('config:cache');
+    Artisan::call('config:clear');
+    Artisan::call('view:clear');
+    return 'cache: cache:clear, config:cache, config:clear, view:clear - wyczyszczony';
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

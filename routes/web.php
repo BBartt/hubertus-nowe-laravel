@@ -16,6 +16,7 @@ use App\Http\Controllers\ImageController;
 use App\Http\Controllers\VenisonController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\OurDogsController;
+use App\Http\Controllers\MainPageController;
 
 
 /*
@@ -32,7 +33,8 @@ use App\Http\Controllers\OurDogsController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class)->name('home');
+Route::resource('/main', MainPageController::class)->except(['index', 'show']);
 Route::get('/historia', HistoryController::class);
 Route::get('/sztandar', StandardController::class);
 Route::get('/odznaczenia', DecorationController::class);

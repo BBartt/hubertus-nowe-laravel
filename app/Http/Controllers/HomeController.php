@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Main;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,6 +15,7 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('home.home');
+      $main = Main::all();
+      return view('home.home', compact('main'));
     }
 }

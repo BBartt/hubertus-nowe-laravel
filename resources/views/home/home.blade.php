@@ -31,5 +31,40 @@
       Związku Stowarzyszeń Łowieckich.
     </p>
   </section>
+
+  @if(Auth::check() && Auth::user()->name == 'admin')
+    <a href="{{ route('main.create') }}" class="btn btn-link">Dodaj dane</a>
+  @endif
+
+  @if( $main->count() > 0 )
+    <section class="info">
+      @if( $main->count() > 0 )
+        <ul class="main-list unorder-list-styles-reset">
+          @foreach( $main as $mainItem )
+            <li class="main-list-item flex-center-center">
+              <div class="hes-gallery">
+                <img class="main-img" src="{{ asset('storage/main_page').'/'.$mainItem->image }}" alt="informacja od administratora" />
+              </div>
+              <div class="main-name-surname">{{ $mainItem->description }}</div>
+              @if(Auth::check() && Auth::user()->name == 'admin')
+                <div class="flex-row-center">
+                  <a href="{{ route('main.edit', $mainItem->id) }}">Edytuj</a>
+                  <form action="{{ route('main.destroy', $mainItem->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="delete-btn">usuń</button>
+                  </form>
+                </div>
+              @endif
+            </li>
+            <br />
+          @endforeach
+        </ul>
+      @else
+        <div class="">else - usuń to</div>
+      @endif
+    </section>
+  @endif
+
 </section>
 @endsection

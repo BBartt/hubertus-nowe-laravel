@@ -54,21 +54,8 @@ class VenisonController extends Controller
         'price' => $request->price,
         'interval' => $request->interval
       ]);
-      
-      return redirect()->route('dziczyzna.index')->with('success', 'Nowy produkt dodany pomyślnie.');
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\venison  $venison
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Venison $dziczyzna)
-    {
-      // dd($dziczyzna);
-      $venison = Venison::find($dziczyzna);
-      return view('venison.show', compact('venison'));
+      return redirect()->route('dziczyzna.index')->with('success', 'Nowy produkt dodany pomyślnie.');
     }
 
     /**

@@ -44,7 +44,7 @@ Route::resource('czlonkowie_kola', MembersController::class)->except(['show']);
 Route::resource('membersTitles', MemberTitleController::class)->only(['create', 'store', 'edit', 'update']);
 Route::resource('rezydenci', ResidentsController::class)->except(['index', 'show']);
 Route::resource('galerie', GalleryController::class);
-Route::resource('dziczyzna', VenisonController::class);
+Route::resource('dziczyzna', VenisonController::class)->except(['show']);
 Route::resource('komunikaty', MessageController::class);
 Route::resource('psy', OurDogsController::class)->except(['show']);
 

@@ -28,8 +28,10 @@
     <div class="venisons-wrapper flex-row-center">
       @foreach( $venisons as $venison )
         <div>
-
-          <a href="{{ route('dziczyzna.show', [ 'dziczyzna' => $venison->id]) }}" class="venison flex-column">
+          <a
+           class="venison flex-column"
+           href="mailto:kl87@pzlbydgoszcz.pl?subject=Zamówienie"
+           >
             <div class="content">
               <img
                 class="venison-img"

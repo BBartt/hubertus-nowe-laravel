@@ -20,6 +20,7 @@
         <li class="li"><a href="/adres" class="link">Ważne dane i adresy</a></li>
         <li class="li"><a href="/dziczyzna" class="link">Sprzedaż dziczyzny</a></li>
         <li class="li"><a href="/galerie" class="link">Foto Galeria</a></li>
+        <li class="li"><a href="/galeria-mysliwego" class="link">Foto Galeria dla Myśliwego</a></li>
 
         @if(Auth::check())
           <li class="li">
@@ -47,7 +48,7 @@
               <!-- po kliknięciu w komunikaty otwiera się podstrona, gdzie są informacje które mogą wpisywać i usuwać upoważnione osoby np. -->
               <!-- np http://www.gdansk.pzlow.pl/palio/html.run?_Instance=pzl_www&_PageID=131&_RowID=2021&_CAT=GDANSK.AKTUALNOSCI -->
               <li class="li">
-                <a class="link" href="/komunikaty">Komunikaty</a>
+                <a class="link" href="/komunikaty">Komunikaty <br> [po zalogowaniu]</a>
               </li>
               <li class="li">
                 <a class="link" href="/zarzad">Zarząd Koła</a>
@@ -80,7 +81,7 @@
                 <a class="link" href="#">Myśliwi dla Was</a>
               </li>
               <li class="li">
-                <a class="link" href="#">Z życia Koła</a>
+                <a class="link" href="/#">Aktualności</a>
               </li>
               <li class="li">
                 <a class="link" href="https://www.pzlow.pl/asf" target="_blank">Bioasekuracja</a>

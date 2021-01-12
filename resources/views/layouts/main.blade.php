@@ -78,7 +78,7 @@
                 <a class="link" href="/psy">Nasze psy</a>
               </li>
               <li class="li">
-                <a class="link" href="#">Myśliwi dla Was</a>
+                <a class="link" href="/imprezy">Myśliwi dla Was</a>
               </li>
               <li class="li">
                 <a class="link" href="/#">Aktualności</a>

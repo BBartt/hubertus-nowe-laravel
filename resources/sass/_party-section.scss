@@ -1,0 +1,25 @@
+.party-section {
+    &.index {
+        .parties-list-item {
+            border-bottom: 4px solid #07a249;
+            padding-bottom: 20px;
+            .hes-gallery {
+                flex-wrap: wrap;
+                .party-image {
+                    cursor: pointer;
+                    width: 200px;
+                }
+            }
+        }
+    }
+
+    &.edit {
+        input {
+            box-sizing: border-box;
+            width: 100%;
+        }
+        input[type="submit"] {
+            width: auto;
+        }
+    }
+}

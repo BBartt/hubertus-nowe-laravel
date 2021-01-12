@@ -17,6 +17,8 @@ use App\Http\Controllers\VenisonController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\OurDogsController;
 use App\Http\Controllers\MainPageController;
+use App\Http\Controllers\PartyController;
+use App\Http\Controllers\PartyImagesController;
 
 
 /*
@@ -49,6 +51,14 @@ Route::resource('galerie', GalleryController::class);
 Route::resource('dziczyzna', VenisonController::class)->except(['show']);
 Route::resource('komunikaty', MessageController::class);
 Route::resource('psy', OurDogsController::class)->except(['show']);
+Route::resource('imprezy', PartyController::class);
+
+Route::get('/imprezy_zdjecia/create/{id}', [PartyImagesController::class, 'create'])->name('imprezy_zdjecia.create')->middleware('auth');
+Route::post('/imprezy_zdjecia/store', [PartyImagesController::class, 'store'])->name('imprezy_zdjecia.store')->middleware('auth');
+Route::get('/imprezy_zdjecia/{id}/edit', [PartyImagesController::class, 'edit'])->name('imprezy_zdjecia.edit')->middleware('auth');
+Route::put('/imprezy_zdjecia/{id}', [PartyImagesController::class, 'update'])->name('imprezy_zdjecia.update')->middleware('auth');
+Route::delete('/imprezy_zdjecia/{id}', [PartyImagesController::class, 'destroy'])->name('imprezy_zdjecia.destroy')->middleware('auth');
+
 
 
 Route::get('/zdjecia/create/{id}', [ImageController::class, 'create'])->name('zdjecia.create')->middleware('auth');

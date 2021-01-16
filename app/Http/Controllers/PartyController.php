@@ -28,11 +28,6 @@ class PartyController extends Controller
       'description' => 'required'
     ]);
 
-    if($request->hasFile('image')){
-      $fileName = rand()."___".$request->file('image')->getClientOriginalName();
-      $request->file('image')->storeAs('/public/party', $fileName);
-    }
-
     Party::create($request->all());
 
     return redirect()->route('imprezy.index')->with('success', 'Dane dodane pomyślnie.');

@@ -23,6 +23,8 @@ use App\Http\Controllers\RefugeController;
 use App\Http\Controllers\RefugeImagesController;
 use App\Http\Controllers\DeadController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\HuntersGalleryController;
+use App\Http\Controllers\HuntersGalleryImageController;
 
 
 /*
@@ -59,6 +61,20 @@ Route::resource('imprezy', PartyController::class);
 Route::resource('ostoja', RefugeController::class);
 Route::resource('kraina', DeadController::class);
 Route::resource('aktualnosci', NewsController::class)->except(['show']);
+Route::resource('galerie-mysliwego', HuntersGalleryController::class);
+
+
+
+Route::get('zdjecia-galerii-mysliwego/create/{id}',
+  [HuntersGalleryImageController::class, 'create'])->name('zdjecia-galerii-mysliwego.create')->middleware('auth');
+Route::post('zdjecia-galerii-mysliwego/store',
+  [HuntersGalleryImageController::class, 'store'])->name('zdjecia-galerii-mysliwego.store')->middleware('auth');
+Route::get('zdjecia-galerii-mysliwego/{id}/edit',
+  [HuntersGalleryImageController::class, 'edit'])->name('zdjecia-galerii-mysliwego.edit')->middleware('auth');
+Route::put('zdjecia-galerii-mysliwego/{id}',
+  [HuntersGalleryImageController::class, 'update'])->name('zdjecia-galerii-mysliwego.update')->middleware('auth');
+Route::delete('zdjecia-galerii-mysliwego/{id}',
+  [HuntersGalleryImageController::class, 'destroy'])->name('zdjecia-galerii-mysliwego.destroy')->middleware('auth');
 
 
 

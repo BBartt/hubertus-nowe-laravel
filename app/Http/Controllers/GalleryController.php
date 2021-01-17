@@ -140,7 +140,7 @@ class GalleryController extends Controller
         $gallery->images()->delete();
         $gallery->delete();
 
-        return redirect()->route('galerie.index')->with('success', 'Zdjęcie w galerii usunięte pomyślnie.');
+        return redirect()->route('galerie.index')->with('success', 'Galeria usunięte pomyślnie.');
 
     }
 }

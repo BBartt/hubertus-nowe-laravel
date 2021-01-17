@@ -550,3 +550,36 @@ ul.top-links {
   float: left;
 }
 
+.hunter-gallery-section {
+  width: 100%;
+}
+
+.hunter-gallery-section.index .galleries-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.hunter-gallery-section.index .galleries-wrapper a .gallery-thumbnail {
+  width: 200px;
+}
+
+.hunter-gallery-section.index .galleries-wrapper a h1 {
+  margin: 0;
+}
+
+.hunter-gallery-section.show .images-wrapper .hes-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.hunter-gallery-section.show .images-wrapper .hes-gallery .image-wrapper .gallery-image {
+  cursor: pointer;
+  width: 200px;
+}
+
+.hunter-gallery-section.show .images-wrapper .hes-gallery .image-wrapper p {
+  margin: 0;
+}
+

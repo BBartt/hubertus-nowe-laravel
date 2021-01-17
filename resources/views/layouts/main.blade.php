@@ -20,7 +20,7 @@
         <li class="li"><a href="/adres" class="link">Ważne dane i adresy</a></li>
         <li class="li"><a href="/dziczyzna" class="link">Sprzedaż dziczyzny</a></li>
         <li class="li"><a href="/galerie" class="link">Foto Galeria</a></li>
-        <li class="li"><a href="/galeria-mysliwego" class="link">Foto Galeria dla Myśliwego</a></li>
+        <li class="li"><a href="/galerie-mysliwego" class="link">Foto Galeria dla Myśliwego</a></li>
 
         @if(Auth::check())
           <li class="li">

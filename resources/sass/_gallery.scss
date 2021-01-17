@@ -7,8 +7,9 @@
             flex-wrap: wrap;
             justify-content: space-evenly;
             a {
+                width: 250px;
                 .gallery-thumbnail {
-                    width: 200px;
+                    width: 100%;
                 }
                 h1 {
                     margin: 0;

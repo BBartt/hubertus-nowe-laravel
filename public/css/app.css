@@ -359,8 +359,12 @@ ul.top-links {
   justify-content: space-evenly;
 }
 
+.gallery-section.index .galleries-wrapper a {
+  width: 250px;
+}
+
 .gallery-section.index .galleries-wrapper a .gallery-thumbnail {
-  width: 200px;
+  width: 100%;
 }
 
 .gallery-section.index .galleries-wrapper a h1 {
@@ -560,8 +564,12 @@ ul.top-links {
   justify-content: space-evenly;
 }
 
+.hunter-gallery-section.index .galleries-wrapper a {
+  width: 250px;
+}
+
 .hunter-gallery-section.index .galleries-wrapper a .gallery-thumbnail {
-  width: 200px;
+  width: 100%;
 }
 
 .hunter-gallery-section.index .galleries-wrapper a h1 {

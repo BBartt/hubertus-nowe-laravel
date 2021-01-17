@@ -21,6 +21,7 @@ use App\Http\Controllers\PartyController;
 use App\Http\Controllers\PartyImagesController;
 use App\Http\Controllers\RefugeController;
 use App\Http\Controllers\RefugeImagesController;
+use App\Http\Controllers\DeadController;
 
 
 /*
@@ -55,6 +56,7 @@ Route::resource('komunikaty', MessageController::class);
 Route::resource('psy', OurDogsController::class)->except(['show']);
 Route::resource('imprezy', PartyController::class);
 Route::resource('ostoja', RefugeController::class);
+Route::resource('kraina', DeadController::class);
 
 
 

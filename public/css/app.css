@@ -533,3 +533,11 @@ ul.top-links {
   width: 200px;
 }
 
+.dead-section .table {
+  margin: 0 auto;
+}
+
+.dead-section .table tr:nth-child(even) {
+  background-color: #16c360;
+}
+

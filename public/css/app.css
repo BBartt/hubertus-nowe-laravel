@@ -541,3 +541,12 @@ ul.top-links {
   background-color: #16c360;
 }
 
+.news-section {
+  width: 100%;
+}
+
+.news-section .news-img {
+  width: 200px;
+  float: left;
+}
+

@@ -55,15 +55,17 @@ class PartyController extends Controller
     return redirect()->route('imprezy.index')->with('success', 'Dane zaktualizowane pomyślnie.');
   }
 
-  public function destroy(Party $imprezy){
+  public function destroy($id){
 
-    if(File::exists(public_path().'/storage/party__images-'.$imprezy->id)) {
-      File::deleteDirectory(public_path().'/storage/party__images-'.$imprezy->id);
+    $image = Party::findOrFail($id);
+
+    if(File::exists(public_path().'/storage/party__images-'.$image->id)) {
+      File::deleteDirectory(public_path().'/storage/party__images-'.$image->id);
     }
 
-    $imprezy->partyImage()->delete();
+    $image->partyImages()->delete();
 
-    $imprezy->delete();
+    $image->delete();
 
     return redirect()->route('imprezy.index')->with('success', 'Dane usuniętę pomyślnie.');
 

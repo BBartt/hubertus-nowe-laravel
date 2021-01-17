@@ -13,7 +13,7 @@ class Party extends Model
 
     protected $fillable = ['description', 'link_1', 'link_2', 'link_3', 'link_4', 'link_5'];
 
-    public function partyImage(){
+    public function partyImages(){
       return $this->hasMany('App\Models\PartyImage');
     }
 

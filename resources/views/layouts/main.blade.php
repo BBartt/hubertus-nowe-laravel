@@ -81,7 +81,7 @@
                 <a class="link" href="/imprezy">Myśliwi dla Was</a>
               </li>
               <li class="li">
-                <a class="link" href="/#">Aktualności</a>
+                <a class="link" href="/aktualnosci">Aktualności</a>
               </li>
               <li class="li">
                 <a class="link" href="https://www.pzlow.pl/asf" target="_blank">Bioasekuracja</a>

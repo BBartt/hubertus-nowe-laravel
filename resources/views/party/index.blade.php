@@ -39,9 +39,9 @@
               <a target="_blank" href="{{ $party->link_5 }}">{{ $party->link_5 }}</a>
             @endif
 
-            @if(count($party->partyImage) > 0)
+            @if(count($party->partyImages) > 0)
               <div class="hes-gallery images-wrapper flex-row-center">
-                @foreach( $party->partyImage as $image )
+                @foreach( $party->partyImages as $image )
                   <div>
                     <img
                       class="party-image"

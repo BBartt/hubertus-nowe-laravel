@@ -1,13 +1,13 @@
 @extends('layouts.main')
 
 @section('content')
-<section class="images-section">
+<section class="refuge-section edit">
 
   <h1>Edytuj zdjęcie</h1>
 
   <x-errors />
 
-  <form action="{{ route('imprezy_zdjecia.update', $image->id) }}" method="post" enctype="multipart/form-data">
+  <form action="{{ route('ostoja_zdjecia.update', $image->id) }}" method="post" enctype="multipart/form-data">
     @csrf
     @method('put')
 
@@ -16,13 +16,13 @@
       <input type="file" name="image" />
     </div>
 
-    <input type="hidden" name="party_id" value="{{ $image->party_id }}" >
+    <input type="hidden" name="refuge_id" value="{{ $image->refuge_id }}" >
 
     <br />
     <br />
 
     <input type="submit" value="Edytuj zdjęcie" />
-    <a href="{{ route('imprezy.index') }}" class="btn btn-link">Powrót</a>
+    <a href="{{ route('ostoja.index') }}" class="btn btn-link">Powrót</a>
   </form>
 
 </section>

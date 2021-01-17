@@ -19,6 +19,8 @@ use App\Http\Controllers\OurDogsController;
 use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\PartyController;
 use App\Http\Controllers\PartyImagesController;
+use App\Http\Controllers\RefugeController;
+use App\Http\Controllers\RefugeImagesController;
 
 
 /*
@@ -52,6 +54,18 @@ Route::resource('dziczyzna', VenisonController::class)->except(['show']);
 Route::resource('komunikaty', MessageController::class);
 Route::resource('psy', OurDogsController::class)->except(['show']);
 Route::resource('imprezy', PartyController::class);
+Route::resource('ostoja', RefugeController::class);
+
+
+
+
+Route::get('/ostoja_zdjecia/create/{id}', [RefugeImagesController::class, 'create'])->name('ostoja_zdjecia.create')->middleware('auth');
+Route::post('/ostoja_zdjecia/store', [RefugeImagesController::class, 'store'])->name('ostoja_zdjecia.store')->middleware('auth');
+Route::get('/ostoja_zdjecia/{id}/edit', [RefugeImagesController::class, 'edit'])->name('ostoja_zdjecia.edit')->middleware('auth');
+Route::put('/ostoja_zdjecia/{id}', [RefugeImagesController::class, 'update'])->name('ostoja_zdjecia.update')->middleware('auth');
+Route::delete('/ostoja_zdjecia/{id}', [RefugeImagesController::class, 'destroy'])->name('ostoja_zdjecia.destroy')->middleware('auth');
+
+
 
 Route::get('/imprezy_zdjecia/create/{id}', [PartyImagesController::class, 'create'])->name('imprezy_zdjecia.create')->middleware('auth');
 Route::post('/imprezy_zdjecia/store', [PartyImagesController::class, 'store'])->name('imprezy_zdjecia.store')->middleware('auth');

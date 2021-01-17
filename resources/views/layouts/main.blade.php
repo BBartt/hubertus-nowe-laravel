@@ -68,7 +68,7 @@
                 <!-- baza -->
                 <!-- długi tkst i zdjęćia i pod każdyn zdjęciem ma być opis -->
 
-                <a class="link" href="#">Ostoja</a>
+                <a class="link" href="/ostoja">Ostoja</a>
               </li>
               <li class="li">
                 <a class="link" href="lowiska">Łowiska</a>

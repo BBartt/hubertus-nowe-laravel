@@ -519,3 +519,17 @@ ul.top-links {
   width: auto;
 }
 
+.refuge-section.index .refuges-list-item {
+  border-bottom: 4px solid #07a249;
+  padding-bottom: 20px;
+}
+
+.refuge-section.index .refuges-list-item .hes-gallery {
+  flex-wrap: wrap;
+}
+
+.refuge-section.index .refuges-list-item .hes-gallery .refuge-image {
+  cursor: pointer;
+  width: 200px;
+}
+

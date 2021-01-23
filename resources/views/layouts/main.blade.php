@@ -71,6 +71,9 @@
                 <a class="link" href="/ostoja">Ostoja</a>
               </li>
               <li class="li">
+                <a class="link" href="/trofea">Trofea Łowieckie</a>
+              </li>
+              <li class="li">
                 <a class="link" href="lowiska">Łowiska</a>
               </li>
               <li class="li">

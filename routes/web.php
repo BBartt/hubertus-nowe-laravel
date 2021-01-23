@@ -25,22 +25,8 @@ use App\Http\Controllers\DeadController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\HuntersGalleryController;
 use App\Http\Controllers\HuntersGalleryImageController;
+use App\Http\Controllers\TrophyController;
 
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 Route::get('/', HomeController::class)->name('home');
 Route::resource('/main', MainPageController::class)->except(['index', 'show']);
 Route::get('/historia', HistoryController::class);
@@ -62,6 +48,7 @@ Route::resource('ostoja', RefugeController::class);
 Route::resource('kraina', DeadController::class);
 Route::resource('aktualnosci', NewsController::class)->except(['show']);
 Route::resource('galerie-mysliwego', HuntersGalleryController::class);
+Route::resource('trofea', TrophyController::class);
 
 
 

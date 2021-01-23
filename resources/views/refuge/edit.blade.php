@@ -19,7 +19,7 @@
       <br />
       <br />
 
-      <input type="submit" value="Dodaj" />
+      <input type="submit" value="Zaktualizuj" />
       <a href="{{ route('ostoja.index') }}" class="btn btn-link">Powrót</a>
     </form>
   <section>

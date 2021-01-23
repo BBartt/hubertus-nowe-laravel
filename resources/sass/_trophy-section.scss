@@ -1,0 +1,14 @@
+.trophy-section {
+    &.index .trophies-wrapper > div:first-child {
+        // white-space: pre-wrap;
+        white-space: pre-wrap;
+    }
+
+    textarea {
+        text-align: center;
+    }
+
+    &.create {
+        resize: vertical;
+    }
+}

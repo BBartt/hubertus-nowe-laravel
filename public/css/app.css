@@ -591,3 +591,15 @@ ul.top-links {
   margin: 0;
 }
 
+.trophy-section.index .trophies-wrapper > div:first-child {
+  white-space: pre-wrap;
+}
+
+.trophy-section textarea {
+  text-align: center;
+}
+
+.trophy-section.create {
+  resize: vertical;
+}
+

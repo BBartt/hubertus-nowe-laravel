@@ -6,7 +6,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-evenly;
-            a {
+            > div > a {
                 width: 250px;
                 .gallery-thumbnail {
                     width: 100%;

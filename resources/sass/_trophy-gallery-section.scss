@@ -1,0 +1,18 @@
+.trophy-gallery-section {
+    &.show {
+        .images-wrapper .hes-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            .image-wrapper {
+                .gallery-image {
+                    cursor: pointer;
+                    width: 200px;
+                }
+                p {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

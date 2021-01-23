@@ -26,6 +26,8 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\HuntersGalleryController;
 use App\Http\Controllers\HuntersGalleryImageController;
 use App\Http\Controllers\TrophyController;
+use App\Http\Controllers\TrophyGalleryController;
+use App\Http\Controllers\TrophyGalleryImagesController;
 
 Route::get('/', HomeController::class)->name('home');
 Route::resource('/main', MainPageController::class)->except(['index', 'show']);
@@ -48,7 +50,8 @@ Route::resource('ostoja', RefugeController::class);
 Route::resource('kraina', DeadController::class);
 Route::resource('aktualnosci', NewsController::class)->except(['show']);
 Route::resource('galerie-mysliwego', HuntersGalleryController::class);
-Route::resource('trofea', TrophyController::class);
+Route::resource('trofea', TrophyController::class)->except(['show']);
+Route::resource('trofea-galeria', TrophyGalleryController::class)->except(['index']);
 
 
 
@@ -62,6 +65,20 @@ Route::put('zdjecia-galerii-mysliwego/{id}',
   [HuntersGalleryImageController::class, 'update'])->name('zdjecia-galerii-mysliwego.update')->middleware('auth');
 Route::delete('zdjecia-galerii-mysliwego/{id}',
   [HuntersGalleryImageController::class, 'destroy'])->name('zdjecia-galerii-mysliwego.destroy')->middleware('auth');
+
+
+
+
+Route::get('zdjecia-galerii-trofea/create/{id}',
+  [TrophyGalleryImagesController::class, 'create'])->name('zdjecia-galerii-trofea.create')->middleware('auth');
+Route::post('zdjecia-galerii-trofea/store',
+  [TrophyGalleryImagesController::class, 'store'])->name('zdjecia-galerii-trofea.store')->middleware('auth');
+Route::get('zdjecia-galerii-trofea/{id}/edit',
+  [TrophyGalleryImagesController::class, 'edit'])->name('zdjecia-galerii-trofea.edit')->middleware('auth');
+Route::put('zdjecia-galerii-trofea/{id}',
+  [TrophyGalleryImagesController::class, 'update'])->name('zdjecia-galerii-trofea.update')->middleware('auth');
+Route::delete('zdjecia-galerii-trofea/{id}',
+  [TrophyGalleryImagesController::class, 'destroy'])->name('zdjecia-galerii-trofea.destroy')->middleware('auth');
 
 
 

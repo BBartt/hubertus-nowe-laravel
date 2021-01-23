@@ -11,4 +11,21 @@
     &.create {
         resize: vertical;
     }
+
+    .trophy-images-section {
+        .galleries-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            a.gallery-link {
+                width: 250px;
+                .gallery-thumbnail {
+                    width: 100%;
+                }
+                h1 {
+                    margin: 0;
+                }
+            }
+        }
+    }
 }

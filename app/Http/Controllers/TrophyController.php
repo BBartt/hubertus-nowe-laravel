@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Trophy;
+use App\Models\TrophyGallery;
 use Illuminate\Http\Request;
 
 class TrophyController extends Controller
@@ -13,7 +14,8 @@ class TrophyController extends Controller
 
   public function index(){
     $trophies = Trophy::all();
-    return view('trophy.index', compact('trophies'));
+    $galleries = TrophyGallery::all();
+    return view('trophy.index', compact('trophies', 'galleries'));
   }
 
   public function create(){
@@ -35,7 +37,6 @@ class TrophyController extends Controller
   }
 
   public function update(Request $request, Trophy $trofea){
-
 
       $request->validate([
         'not_trim_description' => 'required',

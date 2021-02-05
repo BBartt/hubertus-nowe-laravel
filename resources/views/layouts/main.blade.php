@@ -58,7 +58,7 @@
                 <a class="link" href="/czlonkowie_kola">Członkowie</a>
               </li>
               <li class="li">
-                <a class="link" href="sztandar">Sztandar</a>
+                <a class="link" href="/sztandar">Sztandar</a>
               </li>
               <li class="li">
                 <a class="link" href="/odznaczenia">Odznaczenia</a>

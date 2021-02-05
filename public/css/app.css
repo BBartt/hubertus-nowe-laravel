@@ -289,7 +289,11 @@ ul.top-links {
 .home-section section.info .main-list .main-list-item .main-img {
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
-  width: 200px;
+  width: 400px;
+}
+
+.home-section section.info .main-list .main-list-item .main-name-surname {
+  margin-left: 20px;
 }
 
 .history-section img {

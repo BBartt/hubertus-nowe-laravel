@@ -36,7 +36,11 @@
                 .main-img {
                     border-top-right-radius: 10px;
                     border-top-left-radius: 10px;
-                    width: 200px;
+                    width: 400px;
+                    cursor: pointer;
+                }
+                .main-name-surname {
+                    margin-left: 20px;
                 }
             }
         }

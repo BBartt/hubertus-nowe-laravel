@@ -32,7 +32,7 @@ use App\Http\Controllers\TrophyGalleryImagesController;
 Route::get('/', HomeController::class)->name('home');
 Route::resource('/main', MainPageController::class)->except(['index', 'show']);
 Route::get('/historia', HistoryController::class);
-Route::get('/sztandar', StandardController::class);
+Route::resource('/sztandar', StandardController::class)->except(['show']);
 Route::get('/odznaczenia', DecorationController::class);
 Route::get('/lowiska', HuntingGroundController::class);
 Route::resource('/adres', AddressController::class);

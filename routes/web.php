@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HistoryController;
+use App\Http\Controllers\HistoryImagesController;
 use App\Http\Controllers\StandardController;
 use App\Http\Controllers\DecorationController;
 use App\Http\Controllers\HuntingGroundController;
@@ -31,7 +32,7 @@ use App\Http\Controllers\TrophyGalleryImagesController;
 
 Route::get('/', HomeController::class)->name('home');
 Route::resource('/main', MainPageController::class)->except(['index', 'show']);
-Route::get('/historia', HistoryController::class);
+Route::resource('/historia', HistoryController::class);
 Route::resource('/sztandar', StandardController::class)->except(['show']);
 Route::get('/odznaczenia', DecorationController::class);
 Route::get('/lowiska', HuntingGroundController::class);
@@ -88,6 +89,19 @@ Route::post('/ostoja_zdjecia/store', [RefugeImagesController::class, 'store'])->
 Route::get('/ostoja_zdjecia/{id}/edit', [RefugeImagesController::class, 'edit'])->name('ostoja_zdjecia.edit')->middleware('auth');
 Route::put('/ostoja_zdjecia/{id}', [RefugeImagesController::class, 'update'])->name('ostoja_zdjecia.update')->middleware('auth');
 Route::delete('/ostoja_zdjecia/{id}', [RefugeImagesController::class, 'destroy'])->name('ostoja_zdjecia.destroy')->middleware('auth');
+
+
+
+Route::get('/historia_zdjecia/create/{id}',
+  [HistoryImagesController::class, 'create'])->name('historia_zdjecia.create')->middleware('auth');
+Route::post('/historia_zdjecia/store',
+  [HistoryImagesController::class, 'store'])->name('historia_zdjecia.store')->middleware('auth');
+Route::get('/historia_zdjecia/{id}/edit',
+  [HistoryImagesController::class, 'edit'])->name('historia_zdjecia.edit')->middleware('auth');
+Route::put('/historia_zdjecia/{id}',
+  [HistoryImagesController::class, 'update'])->name('historia_zdjecia.update')->middleware('auth');
+Route::delete('/historia_zdjecia/{id}',
+  [HistoryImagesController::class, 'destroy'])->name('historia_zdjecia.destroy')->middleware('auth');
 
 
 

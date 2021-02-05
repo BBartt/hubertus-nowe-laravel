@@ -15,5 +15,4 @@ class Refuge extends Model
       return $this->hasMany('App\Models\RefugeImage');
     }
 
-
 }

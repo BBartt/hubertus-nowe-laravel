@@ -290,6 +290,7 @@ ul.top-links {
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   width: 400px;
+  cursor: pointer;
 }
 
 .home-section section.info .main-list .main-list-item .main-name-surname {
@@ -303,6 +304,10 @@ ul.top-links {
 
 .history-section hr {
   border-color: black;
+}
+
+.history-section .history-list .histories-list-item .images-wrapper {
+  flex-wrap: wrap;
 }
 
 .history-section .monument-info-wrapper {

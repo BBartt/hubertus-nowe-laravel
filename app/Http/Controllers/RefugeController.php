@@ -12,8 +12,7 @@ class RefugeController extends Controller
     $this->middleware('auth')->except('index');
   }
 
-  public function index()
-  {
+  public function index(){
       $refuges = Refuge::all();
       return view('refuge.index', compact('refuges'));
   }
@@ -34,6 +33,7 @@ class RefugeController extends Controller
   }
 
   public function edit(Refuge $ostoja){
+    // dd($ostoja);
     return view('refuge.edit', compact('ostoja'));
   }
 

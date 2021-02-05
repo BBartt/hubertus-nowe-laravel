@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTrophiesTable extends Migration
+class CreateDecorationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateTrophiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('trophies', function (Blueprint $table) {
+        Schema::create('decorations', function (Blueprint $table) {
             $table->id();
-            $table->text('not_trim_description');
+            $table->text('not_trim_description1');
+            $table->text('not_trim_description2');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateTrophiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('trophies');
+        Schema::dropIfExists('decorations');
     }
 }

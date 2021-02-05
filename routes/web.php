@@ -34,7 +34,7 @@ Route::get('/', HomeController::class)->name('home');
 Route::resource('/main', MainPageController::class)->except(['index', 'show']);
 Route::resource('/historia', HistoryController::class);
 Route::resource('/sztandar', StandardController::class)->except(['show']);
-Route::get('/odznaczenia', DecorationController::class);
+Route::resource('/odznaczenia', DecorationController::class);
 Route::get('/lowiska', HuntingGroundController::class);
 Route::resource('/adres', AddressController::class);
 

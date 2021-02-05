@@ -74,7 +74,7 @@
                 <a class="link" href="/trofea">Trofea Łowieckie</a>
               </li>
               <li class="li">
-                <a class="link" href="lowiska">Łowiska</a>
+                <a class="link" href="/lowiska">Łowiska</a>
               </li>
               <li class="li">
                 <!-- zdjęcie i opis pod zdjęćiem -->

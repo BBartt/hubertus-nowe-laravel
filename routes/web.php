@@ -36,7 +36,7 @@ Route::resource('/main', MainPageController::class)->except(['index', 'show']);
 Route::resource('/historia', HistoryController::class);
 Route::resource('/sztandar', StandardController::class)->except(['show']);
 Route::resource('/odznaczenia', DecorationController::class);
-Route::get('/lowiska', HuntingGroundController::class);
+Route::resource('/lowiska', HuntingGroundController::class)->except(['show']);
 Route::resource('/adres', AddressController::class);
 
 Route::resource('zarzad', ManagementsController::class)->except(['show']);

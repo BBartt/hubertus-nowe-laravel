@@ -16,7 +16,7 @@
     @if( $dogs->count() > 0 )
       <ul class="dogs-list unorder-list-styles-reset">
         @foreach( $dogs as $dog )
-          <li class="dogs-list-item flex-column-center">
+          <li class="dogs-list-item hes-gallery flex-column-center">
             <img class="dog-img" src="{{ asset('storage/our_dogs').'/'.$dog->image }}" alt="pies koła" />
             <div class="dog-name-surname">{{ $dog->description }}</div>
             <div class="flex-row-center">

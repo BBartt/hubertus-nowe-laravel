@@ -17,10 +17,10 @@
       <ul class="news-list unorder-list-styles-reset">
         @foreach( $news as $new )
           <li class="news-list-item">
-            <img class="news-img" src="{{ asset('storage/news').'/'.$new->image }}" alt="aktualność" />
             <div class="hes-gallery">
-              <div class="news-description">{{ $new->description }}</div>
+              <img class="news-img" src="{{ asset('storage/news').'/'.$new->image }}" alt="aktualność" />
             </div>
+            <div class="news-description">{{ $new->description }}</div>
             <div class="flex-row-center">
               @if(Auth::check() && Auth::user()->name == 'admin')
                 <a href="{{ route('aktualnosci.edit', $new->id) }}">Edytuj</a>
@@ -33,7 +33,6 @@
               @endif
             </div>
           </li>
-          <br />
         @endforeach
       </ul>
     @else

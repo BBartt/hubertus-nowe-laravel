@@ -3,28 +3,36 @@
 @section('content')
 <section class="decorations-section index">
 
-  <h3>
-    Koło Łowieckie Nr 87 Hubertus w Nowem za zasługi dla łowiectwa
-    zostało odznaczone Złotym Medalem Zasługi Łowieckiej w 1996 roku i
-    najwyższym odznaczeniem łowieckim, tj. "Złomem" w 2016 roku).
-  </h3>
-
-  <div class="hes-gallery">
-    <img src="{{ asset('images/decorations/sztandar 1.jpg') }}" alt="" />
-    <img src="{{ asset('images/decorations/sztandar 2.jpg') }}" alt="" />
-  </div>
-
-  <h3>
-    Ponadto na podstawie uchwał Walnych Zgromadzeń członków Koła i
-    wniosków opracowywanych przez Zarządu Koła odznaczeniami łowieckimi
-    zostali uhonorowani:
-  </h3>
-
-
-
   @if(Auth::check() && Auth::user()->name == 'admin')
     <a href="{{ route('odznaczenia.create') }}">Dodaj dane</a>
+    @if( !$data )
+      <a href="{{ route('odznaczenia_tytuly_zdjecia.create', 1) }}">Dodaj tytułu i/lub zdjęcia</a>
+    @endif
     <br>
+  @endif
+
+  @if( $data )
+    <div class="decorations-wrapper flex-column">
+
+      @if( $data->title1 )
+        <h3>{!! nl2br(e($data->title1)) !!}</h3>
+      @endif
+      @if( $data->title2 )
+        <h3>{!! nl2br(e($data->title2)) !!}</h3>
+      @endif
+
+      @if(Auth::check() && Auth::user()->name == 'admin')
+        <div class="actions flex-row-center">
+          <a href="{{ route('odznaczenia_tytuly_zdjecia.edit', 1) }}">Edytuj</a>
+          <form action="{{ route('odznaczenia_tytuly_zdjecia.destroy', 1) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="delete-btn">usuń</button>
+          </form>
+        </div>
+      @endif
+
+    </div>
   @endif
 
   @if( count($decorations) > 0 )

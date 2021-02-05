@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Decoration;
+use App\Models\DecorationsTitlesAndImages;
 
 
 class DecorationController extends Controller
@@ -15,7 +16,8 @@ class DecorationController extends Controller
 
   public function index(){
     $decorations = Decoration::all();
-    return view('decorations.index', compact('decorations'));
+    $data = DecorationsTitlesAndImages::find(1);
+    return view('decorations.index', compact('decorations', 'data'));
   }
 
   public function create(){

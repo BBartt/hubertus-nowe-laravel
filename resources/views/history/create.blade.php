@@ -3,7 +3,7 @@
 @section('content')
   <section class="history-section">
 
-    <h1>Dodaj dane do sekcji ostoja</h1>
+    <h1>Dodaj dane do sekcji historia</h1>
 
     <x-errors />
 
@@ -45,7 +45,7 @@
       <br />
 
       <input type="submit" value="Dodaj" />
-      <a href="{{ route('ostoja.index') }}" class="btn btn-link">Powrót</a>
+      <a href="{{ route('historia.index') }}" class="btn btn-link">Powrót</a>
     </form>
   <section>
 @endsection

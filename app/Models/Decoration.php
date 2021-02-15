@@ -9,7 +9,7 @@ class Decoration extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['not_trim_description'];
+    protected $fillable = [ 'title1', 'title2', 'not_trim_description', 'img1', 'img2', 'img3', 'img4', 'img5'];
 
 
 }

@@ -1,7 +1,19 @@
 .decorations-section {
-    &.index .decorations-wrapper > div:first-child {
-        // white-space: pre-wrap;
-        white-space: pre-wrap;
+    &.index {
+        .decorations-wrapper {
+            .description {
+                // white-space: pre-wrap;
+                // white-space: break-all;
+
+                word-break: break-word;
+                text-align: center;
+            }
+
+            .img {
+                cursor: pointer;
+                width: 200px;
+            }
+        }
     }
 
     textarea {
@@ -9,7 +21,16 @@
     }
 
     &.create {
-        resize: vertical;
+        input,
+        textarea {
+            resize: vertical;
+        }
+    }
+
+    input[name="title1"],
+    input[name="title2"] {
+        width: 100%;
+        padding: 5px;
     }
 
     .hes-gallery img {

@@ -15,8 +15,14 @@ class CreateDecorationsTable extends Migration
     {
         Schema::create('decorations', function (Blueprint $table) {
             $table->id();
-            $table->text('not_trim_description1');
-            $table->text('not_trim_description2');
+            $table->string('title1');
+            $table->string('title2')->nullable();
+            $table->text('not_trim_description');
+            $table->text('img1')->nullable();
+            $table->text('img2')->nullable();
+            $table->text('img3')->nullable();
+            $table->text('img4')->nullable();
+            $table->text('img5')->nullable();
             $table->timestamps();
         });
     }

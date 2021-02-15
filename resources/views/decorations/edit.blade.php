@@ -28,37 +28,6 @@
     </div>
 
     <br />
-    <div>
-      <label for="img1">Zdjęcie:</label>
-      <input type="file" name="img1" />
-    </div>
-    <br />
-    <div>
-      <label for="img2">Zdjęcie:</label>
-      <input type="file" name="img2" />
-    </div>
-    <br />
-    <div>
-      <label for="img3">Zdjęcie:</label>
-      <input type="file" name="img3" />
-    </div>
-    <br />
-    <div>
-      <label for="img4">Zdjęcie:</label>
-      <input type="file" name="img4" />
-    </div>
-    <br />
-    <div>
-      <label for="img5">Zdjęcie:</label>
-      <input type="file" name="img5" />
-    </div>
-
-    <br />
-    <br />
-
-
-
-    <br />
     <br />
 
     <input type="submit" value="Zaktualizuj" />

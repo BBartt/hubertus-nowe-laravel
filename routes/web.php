@@ -29,6 +29,7 @@ use App\Http\Controllers\HuntersGalleryImageController;
 use App\Http\Controllers\TrophyController;
 use App\Http\Controllers\TrophyGalleryController;
 use App\Http\Controllers\TrophyGalleryImagesController;
+use App\Http\Controllers\DecorationsImagesController;
 
 Route::get('/', HomeController::class)->name('home');
 Route::resource('/main', MainPageController::class)->except(['index', 'show']);
@@ -80,6 +81,20 @@ Route::put('zdjecia-galerii-trofea/{id}',
   [TrophyGalleryImagesController::class, 'update'])->name('zdjecia-galerii-trofea.update')->middleware('auth');
 Route::delete('zdjecia-galerii-trofea/{id}',
   [TrophyGalleryImagesController::class, 'destroy'])->name('zdjecia-galerii-trofea.destroy')->middleware('auth');
+
+
+
+
+Route::get('odznaczenia_zdjecia/create/{id}',
+  [DecorationsImagesController::class, 'create'])->name('odznaczenia_zdjecia.create')->middleware('auth');
+Route::post('odznaczenia_zdjecia/store',
+  [DecorationsImagesController::class, 'store'])->name('odznaczenia_zdjecia.store')->middleware('auth');
+Route::get('odznaczenia_zdjecia/{id}/edit',
+  [DecorationsImagesController::class, 'edit'])->name('odznaczenia_zdjecia.edit')->middleware('auth');
+Route::put('odznaczenia_zdjecia/{id}',
+  [DecorationsImagesController::class, 'update'])->name('odznaczenia_zdjecia.update')->middleware('auth');
+Route::delete('odznaczenia_zdjecia/{id}',
+  [DecorationsImagesController::class, 'destroy'])->name('odznaczenia_zdjecia.destroy')->middleware('auth');
 
 
 

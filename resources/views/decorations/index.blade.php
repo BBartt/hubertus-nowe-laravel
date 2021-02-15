@@ -21,49 +21,42 @@
 
         <div class="description">{!! nl2br(e($decoration->not_trim_description)) !!}</div>
 
-        <div class="hes-gallery">
-          @if( $decoration->img1 )
-            <img
-              class="img"
-              src="{{ asset('storage/decorations__images')."/".$decoration->img1 }}"
-              alt="{{ $decoration->img1 }}"
-            />
-          @endif
-          @if( $decoration->img2 )
-            <img
-              class="img"
-              src="{{ asset('storage/decorations__images')."/".$decoration->img2 }}"
-              alt="{{ $decoration->img2 }}"
-            />
-          @endif
-          @if( $decoration->img3 )
-            <img
-              class="img"
-              src="{{ asset('storage/decorations__images')."/".$decoration->img3 }}"
-              alt="{{ $decoration->img3 }}"
-            />
-          @endif
-          @if( $decoration->img4 )
-            <img
-              class="img"
-              src="{{ asset('storage/decorations__images')."/".$decoration->img4 }}"
-              alt="{{ $decoration->img4 }}"
-            />
-          @endif
-          @if( $decoration->img5 )
-            <img
-              class="img"
-              src="{{ asset('storage/decorations__images')."/".$decoration->img5 }}"
-              alt="{{ $decoration->img5 }}"
-            />
-          @endif
-        </div>
+        @if( count($decoration->images) > 0 )
 
+          <div class="images-wrapper">
+            <div class="hes-gallery">
 
+              @foreach( $decoration->images as $image )
+                <div class="image-wrapper">
+                  <img
+                    class="img"
+                    src="{{ asset('storage/decorations/decorations__images-').$image->decoration_id."/".$image->image }}"
+                    alt="{{ $image->img1 }}"
+                  />
+                  <div class="flex-row-center">
+                    @if(Auth::check() && Auth::user()->name == 'admin')
+                      <a href="{{ route('odznaczenia_zdjecia.edit', $image->id) }}">Edytuj</a>
+                      <form action="{{ route('odznaczenia_zdjecia.destroy', $image->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="delete-btn">usuń</button>
+                      </form>
+                    @endif
+                  </div>
+                </div>
+              @endforeach
+
+            </div>
+          </div>
+
+        @endif
 
         @if(Auth::check() && Auth::user()->name == 'admin')
           <div class="actions flex-row-center">
             <a href="{{ route('odznaczenia.edit', $decoration->id) }}">Edytuj</a>
+            &nbsp; &nbsp; - &nbsp; &nbsp;
+            <a href="{{ route('odznaczenia_zdjecia.create', $decoration->id) }}">Dodaj zdjecia</a>
+            &nbsp; &nbsp; - &nbsp; &nbsp;
             <form action="{{ route('odznaczenia.destroy', $decoration->id) }}" method="POST">
               @csrf
               @method('DELETE')

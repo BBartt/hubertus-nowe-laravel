@@ -133,10 +133,12 @@
 
     <footer class="footer">
       <img src="{{ asset('images/home/grafika.png') }}" alt="pole zboża" class="footer-img" />
+
       <a class="footer-link link-one" href="mailto:kl87@pzlbydgoszcz.pl">
         <img src="{{ asset('images/home/indeks 1.png') }}" alt="mail koła łowieckiego" />
       </a>
-      <a href="https://www.facebook.com/Ko%C5%82o-%C5%81owieckie-nr-87-Hubertus-w-Nowem-478568449621517" class="footer-link link-two" target="_blank">
+
+      <a class="footer-link link-two" href="https://www.facebook.com/Ko%C5%82o-%C5%81owieckie-nr-87-Hubertus-w-Nowem-478568449621517"  target="_blank">
         <img src="{{ asset('images/home/indeks.png') }}" alt="link do konta facebook koła" />
       </a>
 

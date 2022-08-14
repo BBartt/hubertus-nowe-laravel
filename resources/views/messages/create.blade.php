@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-  <div class="messages-section">
+  <div class="messages-section create">
 
     <h1>Dodaj komunikat</h1>
 

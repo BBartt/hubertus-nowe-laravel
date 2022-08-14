@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-  <section class="news-section">
+  <section class="news-section index">
 
     <h2>Aktualności</h2>
 
@@ -20,7 +20,9 @@
             <div class="hes-gallery">
               <img class="news-img" src="{{ asset('storage/news').'/'.$new->image }}" alt="aktualność" />
             </div>
+            
             <div class="news-description">{{ $new->description }}</div>
+
             <div class="flex-row-center">
               @if(Auth::check() && Auth::user()->name == 'admin')
                 <a href="{{ route('aktualnosci.edit', $new->id) }}">Edytuj</a>

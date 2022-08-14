@@ -6,7 +6,8 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-evenly;
-            > div > a {
+
+            .gallery > a {
                 width: 250px;
                 .gallery-thumbnail {
                     width: 100%;
@@ -30,6 +31,18 @@
                 }
                 p {
                     margin: 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .gallery-section {
+        &.index {
+            .galleries-wrapper {
+                .gallery {
+                    margin-bottom: 20px;
                 }
             }
         }

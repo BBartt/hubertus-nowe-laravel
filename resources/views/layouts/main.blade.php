@@ -11,9 +11,9 @@
 <body>
   <div class="bgc-green">
       <header class="header">
-        <img src="{{ asset('images/home/wizualizacja_2.jpg') }}" alt="herb zwiazku lowieckiego" />
+        <img src="{{ asset('images/home/wizualizacja_2.jpg') }}" alt="herb zwiazku lowieckiego" width="150" height="150" />
         <h1>Koło Łowieckie Nr. 87 „Hubertus” w Nowem</h1>
-        <img src="{{ asset('images/home/kolo lowieckie w nowem.png') }}" alt="Kolo Łowieckie w Nowem" />
+        <img src="{{ asset('images/home/kolo lowieckie w nowem.png') }}" alt="Kolo Łowieckie w Nowem" width="150" height="150" />
       </header>
 
       <ul class="top-links ul">

@@ -28,7 +28,7 @@
     <br />
 
     <input type="submit" value="Edytuj zdjęcia" />
-    <a href="{{ route('galerie.index') }}" class="btn btn-link">Powrót</a>
+    <a href="{{ URL::previous() }}" class="btn btn-link">Powrót</a>
   </form>
 
 </section>

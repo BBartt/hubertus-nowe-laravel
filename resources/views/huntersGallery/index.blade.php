@@ -3,7 +3,7 @@
 @section('content')
 <section class="hunter-gallery-section index">
 
-  <h1>Galeria zdjęć</h1>
+  <h1>Galeria zdjęć dla Myśliwego</h1>
 
   @if(Auth::check() && Auth::user()->name == 'admin')
     <a href="{{ route('galerie-mysliwego.create') }}">Dodaj galerię</a>

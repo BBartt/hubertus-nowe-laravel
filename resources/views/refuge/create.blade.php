@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-  <section class="refuge-section">
+  <section class="refuge-section create">
 
     <h1>Dodaj dane do sekcji ostoja</h1>
 

@@ -1,14 +1,23 @@
 .news-section {
     width: 100%;
-    .news-list {
-        display: flex;
-        flex-direction: column;
+    &.index {
+        .news-list {
+            display: flex;
+            flex-direction: column;
 
-        &-item {
-            margin-bottom: 30px;
-            .news-description {
-                word-break: break-word;
+            &-item {
+                margin-bottom: 30px;
+                .news-description {
+                    word-break: break-word;
+                }
             }
+        }
+    }
+
+    &.create,
+    &.edit {
+        textarea {
+            width: 100%;
         }
     }
 

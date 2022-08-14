@@ -19,7 +19,7 @@
       @foreach( $histories as $history )
         <li class="histories-list-item flex-column-center">
 
-          <p class="description">{!! nl2br(e($history->description)) !!}</p>
+          <p>{!! nl2br(e($history->description)) !!}</p>
 
           @if($history->link1)
             <a target="_blank" href="{{ $history->link1 }}">{{ $history->linkName1 ?: "Link" }}</a>

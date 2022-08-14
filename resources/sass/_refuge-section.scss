@@ -12,4 +12,11 @@
             }
         }
     }
+
+    &.create,
+    &.edit {
+        textarea {
+            width: 100%;
+        }
+    }
 }

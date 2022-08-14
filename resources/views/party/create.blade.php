@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-  <section class="party-section">
+  <section class="party-section create">
 
     <h1>Dodaj dane do sekcji myśliwi dla was</h1>
 

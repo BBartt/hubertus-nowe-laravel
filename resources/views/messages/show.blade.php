@@ -13,7 +13,7 @@
       />
     @endif
 
-    <p class="description">{!! nl2br(e($komunikaty->description)) !!}</p>
+    <p>{!! nl2br(e($komunikaty->description)) !!}</p>
 
     @if($komunikaty->link)
       <a target="_blank" href="{{ $komunikaty->link }}">{{ $komunikaty->linkName ?: "Link" }}</a>

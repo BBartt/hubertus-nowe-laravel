@@ -23,32 +23,32 @@
                     }
                 }
             }
+
+            .actions {
+                margin-top: 40px;
+            }
         }
     }
 
-    textarea {
-        text-align: center;
+    &.create,
+    &.edit {
+        input[name="title1"],
+        input[name="title2"] {
+            padding: 5px;
+            width: 100%;
+        }
+
+        textarea {
+            text-align: center;
+            width: 100%;
+        }
     }
 
     &.create {
         input,
         textarea {
             resize: vertical;
+            width: 100%;
         }
-    }
-
-    input[name="title1"],
-    input[name="title2"] {
-        width: 100%;
-        padding: 5px;
-    }
-
-    .hes-gallery img {
-        cursor: pointer;
-        width: 400px;
-    }
-    .ul {
-        display: table;
-        margin: 0 auto;
     }
 }

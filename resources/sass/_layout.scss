@@ -30,13 +30,19 @@ body {
 
 ul.top-links {
     background-color: #07a249;
-    padding: 20px;
+    padding: 0px;
     margin: 0px;
     list-style: none;
+
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+
+    li {
+        margin: 20px;
+    }
 }
 
 .main {
@@ -68,6 +74,7 @@ ul.top-links {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
+
                 list-style: none;
                 padding: 0;
                 margin: 0;
@@ -186,23 +193,18 @@ ul.top-links {
                         background-color: #07a249;
                     }
 
-                    &:first-child {
-                        margin: 10px 5px 0px;
-                    }
-
                     display: flex;
-                    height: 40px;
 
-                    // margin-top: 10px !important;
-                    // background-color: #07a249;
                     transition: background-color 300ms ease;
                     border-radius: 8px;
                     padding: 0px 10px;
-                    margin: 10px 5px 0px;
+                    height: 40px;
+                    margin: 0;
 
                     .link {
                         margin-top: 0;
                         align-self: center;
+                        padding: 10px 0px;
                     }
                 }
             }
@@ -241,9 +243,40 @@ ul.top-links {
 }
 
 @media screen and (max-width: 576px) {
+    body {
+        margin: 10px;
+    }
+
     .header {
         img {
             width: 50%;
+        }
+    }
+
+    ul.top-links {
+        flex-direction: column;
+
+        .li {
+            margin: 5px;
+        }
+    }
+
+    .main {
+        .aside-left {
+            .nav .ul {
+                .li {
+                    &:first-child {
+                        margin: unset;
+                    }
+
+                    margin: unset;
+                    height: unset;
+                }
+            }
+
+            .link img {
+                width: 100%;
+            }
         }
     }
 }

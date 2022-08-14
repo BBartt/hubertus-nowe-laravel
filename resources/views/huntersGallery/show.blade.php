@@ -20,7 +20,7 @@
           <div class="image-wrapper">
             <img
               class="gallery-image"
-              src="{{ asset('storage/hunters-galleries/gallery__images')."-".$image->hunters_gallery_id."/".$image->image }}"
+              src="https://hubertus-nowe.pl/storage/hunters-galleries/gallery__images-6/1838035601__key-1___20170121_122545 - Kopia.jpg"
             />
             <p>{{ $image->description }}</p>
 

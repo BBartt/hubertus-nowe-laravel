@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-  <section class="news-section">
+  <section class="news-section create">
 
     <h1>Dodaj aktualność</h1>
 

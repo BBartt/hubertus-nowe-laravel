@@ -40,7 +40,7 @@
             @endif
 
             @if(count($party->partyImages) > 0)
-              <div class="hes-gallery images-wrapper flex-row-center">
+              <div class="hes-gallery flex-row-center images-wrapper">
                 @foreach( $party->partyImages as $image )
                   <div>
                     <img

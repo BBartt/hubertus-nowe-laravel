@@ -35,8 +35,8 @@
     <br />
     <br />
 
-    <input type="submit" value="Edytuj zdjęcia" />
-    <a href="{{ route('galerie.index') }}" class="btn btn-link">Powrót</a>
+    <input type="submit" value="Edytuj produkt" />
+    <a href="{{ route('dziczyzna.index') }}" class="btn btn-link">Powrót</a>
   </form>
 
 </section>

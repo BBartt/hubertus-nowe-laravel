@@ -19,7 +19,7 @@
     <br />
 
     <input type="submit" value="Dodaj" />
-    <a href="{{ route('dziczyzna.index') }}" class="btn btn-link">Powrót</a>
+    <a href="{{ route('trofea.index') }}" class="btn btn-link">Powrót</a>
   </form>
 
 </section>

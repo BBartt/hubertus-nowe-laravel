@@ -3,7 +3,7 @@
 @section('content')
 <section class="trophy-gallery-section">
 
-  <h1>Edytuj Miniaturkę galerii</h1>
+  <h1>Edytuj Miniaturkę galerii trofeów</h1>
 
   <x-errors />
 
@@ -25,7 +25,7 @@
     <br />
 
     <input type="submit" value="Edytuj" />
-    <a href="{{ route('galerie.index') }}" class="btn btn-link">Powrót</a>
+    <a href="{{ URL::previous() }}" class="btn btn-link">Powrót</a>
   </form>
 
 </section>

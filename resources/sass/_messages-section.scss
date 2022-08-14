@@ -3,18 +3,25 @@
     &.index {
         .messages-wrapper {
             .message {
-                align-items: baseline;
-                padding-bottom: 5px;
-                margin-bottom: 5px;
-                a h1 {
-                    margin: 0;
+                align-items: center;
+                a {
+                    h1 {
+                        margin: 0;
+                    }
+                    text-align: left;
+                    width: 100%;
                 }
-                > span {
-                    margin-left: 20px;
+
+                > a,
+                > span,
+                > div {
+                    padding: 5px;
                 }
 
                 .actions {
-                    margin-left: 20px;
+                    > form {
+                        margin-left: 10px;
+                    }
                 }
             }
         }
@@ -31,8 +38,37 @@
             width: 300px;
             float: left;
         }
+    }
 
-        .description {
+    &.create {
+        textarea[name="description"] {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .messages-section {
+        &.index {
+            .messages-wrapper {
+                .message {
+                    flex-wrap: wrap;
+                    margin-bottom: 30px;
+
+                    a {
+                        h1 {
+                            font-size: 20px;
+                        }
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+        &.show {
+            .message-img {
+                float: unset;
+            }
         }
     }
 }

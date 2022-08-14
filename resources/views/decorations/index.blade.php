@@ -22,10 +22,7 @@
         <div class="description">{!! nl2br(e($decoration->not_trim_description)) !!}</div>
 
         @if( count($decoration->images) > 0 )
-
-          <div class="images-wrapper">
             <div class="hes-gallery">
-
               @foreach( $decoration->images as $image )
                 <div class="image-wrapper">
                   <img
@@ -45,10 +42,7 @@
                   </div>
                 </div>
               @endforeach
-
             </div>
-          </div>
-
         @endif
 
         @if(Auth::check() && Auth::user()->name == 'admin')
@@ -64,13 +58,11 @@
             </form>
           </div>
         @endif
-
       @endforeach
     </div>
   @else
     <h1>Brak danych</h1>
   @endif
-
 
 </section>
 @endsection

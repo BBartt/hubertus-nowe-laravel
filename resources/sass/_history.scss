@@ -1,18 +1,28 @@
 .history-section {
-  img {
-    cursor: pointer;
-    width: 200px;
-  }
-  hr {
-    border-color: black;
-  }
-  .monument-info-wrapper {
-    display: flex;
-    flex-direction: column;
-    .monument-images {
-      display: -webkit-flex;
-      display: -ms-flex;
-      display: flex;
+    .history-list {
+        .histories-list-item {
+            .images-wrapper {
+                flex-wrap: wrap;
+
+                > div {
+                    margin: 5px;
+                    .history-image {
+                        cursor: pointer;
+                        width: 200px;
+                        height: 100%;
+                    }
+                }
+            }
+        }
     }
-  }
+
+    .monument-info-wrapper {
+        display: flex;
+        flex-direction: column;
+        .monument-images {
+            display: -webkit-flex;
+            display: -ms-flex;
+            display: flex;
+        }
+    }
 }

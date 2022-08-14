@@ -1,0 +1,50 @@
+.trophy-section {
+    &.index .trophies-wrapper > div:first-child {
+        // white-space: pre-wrap;
+        white-space: pre-wrap;
+    }
+
+    textarea {
+        text-align: center;
+    }
+
+    &.create,
+    &.edit {
+        textarea {
+            resize: vertical;
+            width: 100%;
+        }
+    }
+
+    .trophy-images-section {
+        .galleries-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+
+            a.gallery-link {
+                width: 250px;
+                .gallery-thumbnail {
+                    width: 100%;
+                }
+                h1 {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .trophy-images-section {
+        .galleries-wrapper {
+            .gallery {
+                margin: 5px 5px 10px 5px;
+
+                .gallery-link {
+                    width: unset;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,89 @@
+.venison-section {
+    width: 100%;
+    .wrapper {
+        h1:nth-child(1) {
+            margin-right: auto;
+        }
+
+        h1:nth-child(3) {
+            align-self: flex-end;
+        }
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    .venisons-wrapper {
+        justify-content: space-evenly;
+        > div {
+            max-width: 260px;
+            min-width: 30%;
+            height: 100%;
+            background-color: white;
+
+            border-top-right-radius: 15px;
+            border-top-left-radius: 15px;
+            overflow: hidden;
+
+            &:hover a.venison .content > div {
+                transform: translateY(-15px);
+            }
+
+            a.venison {
+                text-decoration: none;
+                display: block;
+                // height: 310px;
+
+                .content {
+                    overflow: auto;
+                    height: 100%;
+                    .venison-img {
+                        display: block;
+                        height: 200px;
+                        width: 100%;
+                    }
+
+                    > div {
+                        position: relative;
+                        z-index: 10;
+                        margin-top: -15px;
+
+                        border-top: 3px solid $bg-green;
+                        border-top-right-radius: 14px;
+                        border-top-left-radius: 14px;
+                        padding: 10px 10px 0px 20px;
+                        background-color: white;
+
+                        transition: transform 0.2s ease-in-out;
+                    }
+
+                    h1 {
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+        .info {
+            font-size: 18px;
+            color: black;
+        }
+    }
+
+    .contact {
+        border: 2px solid white;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .venison-section {
+        .venisons-wrapper {
+            flex-direction: column;
+
+            > div {
+                margin-bottom: 20px;
+                max-width: unset;
+            }
+        }
+    }
+}

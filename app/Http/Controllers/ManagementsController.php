@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Management;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+
 
 class ManagementsController extends Controller
 {
@@ -11,9 +15,16 @@ class ManagementsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function __construct()
+     {
+       $this->middleware('auth')->except('index');
+     }
+
     public function index()
     {
-        return view('managements.index');
+        $managements = Management::all();
+        return view('managements.index', compact('managements'));
     }
 
     /**
@@ -21,9 +32,8 @@ class ManagementsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create(){
+      return view('managements.create');
     }
 
     /**
@@ -34,18 +44,19 @@ class ManagementsController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+      $request->validate([
+        'name' => 'required',
+        'image' => 'required|file|image|mimes:jpeg,png,gif,jpg'
+      ]);
+
+      $request->file('image')->storeAs('/public/managements-img', $request->file('image')->getClientOriginalName());
+      Management::create(['name' => $request->name, 'image' => $request->image->getClientOriginalName()]);
+      return redirect()->route('zarzad.index')->with('success', 'Członek zarządu dodany pomyślnie.');
+
+      if($request->file('image')){
+      }
+
     }
 
     /**
@@ -54,9 +65,8 @@ class ManagementsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+    public function edit(Management $zarzad){
+      return view('managements.edit', compact('zarzad'));
     }
 
     /**
@@ -66,9 +76,30 @@ class ManagementsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Management $zarzad)
     {
-        //
+      $request->validate([
+        'name' => 'required',
+        'image' => 'file|image|mimes:jpeg,png,gif,jpg'
+      ]);
+
+      $management = Management::findOrFail($zarzad->id);
+      $management->name = $request->name;
+
+      if($request->hasFile('image')){
+        $fileName = $request->file('image')->getClientOriginalName();
+
+        $management->image = $fileName;
+
+        if(File::exists(public_path().'/storage/managements-img/'.$zarzad->image)) {
+          File::delete(public_path().'/storage/managements-img/'.$zarzad->image);
+        }
+
+        $request->file('image')->storeAs('/public/managements-img', $request->file('image')->getClientOriginalName());
+      }
+
+      $management->save();
+      return redirect()->route('zarzad.index')->with('success', 'Dane członka zarządu zaktualizowane pomyślnie.');
     }
 
     /**
@@ -77,8 +108,12 @@ class ManagementsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Management $zarzad)
     {
-        //
+        if(File::exists(public_path().'/storage/managements-img/'.$zarzad->image)) {
+          File::delete(public_path().'/storage/managements-img/'.$zarzad->image);
+        }
+        $zarzad->delete();
+        return redirect()->route('zarzad.index')->with('success', 'Członek zarządu usunięty pomyślnie.');
     }
 }

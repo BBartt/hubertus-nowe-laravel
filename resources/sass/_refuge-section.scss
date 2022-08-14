@@ -1,0 +1,22 @@
+.refuge-section {
+    &.index {
+        .refuges-list-item {
+            border-bottom: 4px solid #07a249;
+            padding-bottom: 20px;
+            .hes-gallery {
+                flex-wrap: wrap;
+                .refuge-image {
+                    cursor: pointer;
+                    width: 200px;
+                }
+            }
+        }
+    }
+
+    &.create,
+    &.edit {
+        textarea {
+            width: 100%;
+        }
+    }
+}

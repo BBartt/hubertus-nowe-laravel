@@ -1,0 +1,33 @@
+.party-section {
+    &.index {
+        .parties-list-item {
+            border-bottom: 4px solid #07a249;
+            padding-bottom: 20px;
+            .hes-gallery {
+                flex-wrap: wrap;
+
+                &.images-wrapper {
+                    > div {
+                        margin: 5px;
+
+                        .party-image {
+                            cursor: pointer;
+                            width: 200px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.edit,
+    &.create {
+        textarea,
+        input {
+            width: 100%;
+            &[type="submit"] {
+                width: auto;
+            }
+        }
+    }
+}

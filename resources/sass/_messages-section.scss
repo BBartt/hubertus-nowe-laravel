@@ -1,0 +1,74 @@
+.messages-section {
+    width: 100%;
+    &.index {
+        .messages-wrapper {
+            .message {
+                align-items: center;
+                a {
+                    h1 {
+                        margin: 0;
+                    }
+                    text-align: left;
+                    width: 100%;
+                }
+
+                > a,
+                > span,
+                > div {
+                    padding: 5px;
+                }
+
+                .actions {
+                    > form {
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    &.show {
+        .title {
+            border-bottom: 2px solid white;
+            margin: 10px 0px 20px;
+            padding-bottom: 5px;
+        }
+
+        .message-img {
+            width: 300px;
+            float: left;
+        }
+    }
+
+    &.create {
+        textarea[name="description"] {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .messages-section {
+        &.index {
+            .messages-wrapper {
+                .message {
+                    flex-wrap: wrap;
+                    margin-bottom: 30px;
+
+                    a {
+                        h1 {
+                            font-size: 20px;
+                        }
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+        &.show {
+            .message-img {
+                float: unset;
+            }
+        }
+    }
+}
